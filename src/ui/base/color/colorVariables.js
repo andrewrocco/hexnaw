@@ -1,4 +1,4 @@
-import colors from './colors';
+import colors from './color';
 
 const colorVariables = {
   buttonPrimaryBackground: colors.blue,
