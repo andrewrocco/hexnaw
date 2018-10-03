@@ -1,6 +1,6 @@
 import colorable from 'colorable';
 
-const runTest = () => {
+const testColors = () => {
   const colors = {
     red: 'red',
     green: 'green',
@@ -12,4 +12,4 @@ const runTest = () => {
   return result;
 };
 
-export default runTest;
+export default testColors;
