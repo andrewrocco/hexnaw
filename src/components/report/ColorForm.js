@@ -8,34 +8,43 @@ export class ColorForm extends PureComponent {
     super(props);
 
     this.state = {
+      colorCount: 0,
       colorResults: {},
     };
   }
 
   render() {
-    const { colorResults } = this.state;
+    const { colorCount, colorResults } = this.state;
 
     return (
       <div>
         <Formik
           initialValues={{ colorA: '#FFFFFF', colorB: '#000000' }}
-          onSubmit={(values, actions) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              actions.setSubmitting(false);
-              const results = testColors(values);
-
-              this.setState({ colorResults: results });
-            }, 1000);
+          validate={(values) => {
+            console.log(values);
           }}
-          render={({ errors, touched, isSubmitting }) => (
-            <Form>
-              <Field type="text" name="colorA" />
-              <Field type="text" name="colorB" />
-              <button type="submit" disabled={isSubmitting}>
-                Submit
-              </button>
-            </Form>
+          onSubmit={(values, actions) => {
+            console.log(actions);
+            const results = testColors(values);
+            console.log(results);
+          }}
+          render={({ handleReset, isSubmitting }) => (
+            <div>
+              <div>
+                {colorCount}
+                / 12 Colors
+                <button type="button" onClick={handleReset}>
+                  Clear All
+                </button>
+              </div>
+              <Form>
+                <Field type="text" name="colorA" />
+                <Field type="text" name="colorB" />
+                <button type="submit" disabled={isSubmitting}>
+                  Submit
+                </button>
+              </Form>
+            </div>
           )}
         />
         <br />
