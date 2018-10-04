@@ -1,13 +1,9 @@
 import colorable from 'colorable';
 
-const testColors = () => {
-  const colors = {
-    red: 'red',
-    green: 'green',
-    blue: 'blue',
-  };
-
-  const result = colorable(colors, { compact: true, threshold: 0 });
+const testColors = (colors) => {
+  // remove empty string values from object
+  const cleanColors = Object.values(colors).filter(v => v !== '');
+  const result = colorable(cleanColors, { compact: true, threshold: 0 });
 
   return result;
 };
