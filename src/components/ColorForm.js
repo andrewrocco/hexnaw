@@ -35,7 +35,6 @@ export class ColorForm extends PureComponent {
           <Form>
             <Field type="text" name="colorA" />
             <Field type="text" name="colorB" />
-            <Field type="text" name="colorC" />
             <button type="submit" disabled={isSubmitting}>
               Submit
             </button>
