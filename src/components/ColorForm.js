@@ -9,6 +9,7 @@ export class ColorForm extends PureComponent {
 
     this.state = {
       fieldNumber: 2,
+      colorResults: {},
     };
   }
 
@@ -21,26 +22,34 @@ export class ColorForm extends PureComponent {
   }
 
   render() {
+    const { colorResults } = this.state;
+
     return (
-      <Formik
-        initialValues={{ colorA: '#FFFFFF', colorB: '#000000', colorC: '' }}
-        onSubmit={(values, actions) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            actions.setSubmitting(false);
-            testColors(values);
-          }, 1000);
-        }}
-        render={({ errors, touched, isSubmitting }) => (
-          <Form>
-            <Field type="text" name="colorA" />
-            <Field type="text" name="colorB" />
-            <button type="submit" disabled={isSubmitting}>
-              Submit
-            </button>
-          </Form>
-        )}
-      />
+      <div>
+        <Formik
+          initialValues={{ colorA: '#FFFFFF', colorB: '#000000', colorC: '' }}
+          onSubmit={(values, actions) => {
+            setTimeout(() => {
+              alert(JSON.stringify(values, null, 2));
+              actions.setSubmitting(false);
+              const results = testColors(values);
+
+              this.setState({ colorResults: results });
+            }, 1000);
+          }}
+          render={({ errors, touched, isSubmitting }) => (
+            <Form>
+              <Field type="text" name="colorA" />
+              <Field type="text" name="colorB" />
+              <button type="submit" disabled={isSubmitting}>
+                Submit
+              </button>
+            </Form>
+          )}
+        />
+        <br />
+        <pre>{JSON.stringify(colorResults, null, 2)}</pre>
+      </div>
     );
   }
 }
