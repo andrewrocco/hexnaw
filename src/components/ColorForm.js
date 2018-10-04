@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
 import { Formik, Form, Field } from 'formik';
 
+import testColors from '../utils/testColors';
+
 export class ColorForm extends PureComponent {
   constructor(props) {
     super(props);
@@ -26,6 +28,7 @@ export class ColorForm extends PureComponent {
           setTimeout(() => {
             alert(JSON.stringify(values, null, 2));
             actions.setSubmitting(false);
+            testColors(values);
           }, 1000);
         }}
         render={({ errors, touched, isSubmitting }) => (
