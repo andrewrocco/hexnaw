@@ -7,19 +7,41 @@ export class ColorForm extends PureComponent {
   constructor(props) {
     super(props);
 
+    this.initialValues = { hex0: '', hex1: '' };
+
     this.state = {
       colorCount: 0,
       colorResults: {},
+      hexInputNames: Object.keys(this.initialValues),
     };
+
+    this.handleResetProxy = null;
+    this.addHexInput = this.addHexInput.bind(this);
+    this.resetForm = this.resetForm.bind(this);
+  }
+
+  addHexInput(e) {
+    e.preventDefault();
+    this.setState(({ hexInputNames }) => ({
+      hexInputNames: [
+        ...hexInputNames,
+        `hex${hexInputNames.length}`,
+      ],
+    }));
+  }
+
+  resetForm() {
+    this.setState({ hexInputNames: Object.keys(this.initialValues) });
+    this.handleResetProxy();
   }
 
   render() {
-    const { colorCount, colorResults } = this.state;
+    const { colorCount, colorResults, hexInputNames } = this.state;
 
     return (
       <div>
         <Formik
-          initialValues={{ colorA: '#FFFFFF', colorB: '#000000' }}
+          initialValues={this.initialValues}
           validate={(values) => {
             console.log(values);
           }}
@@ -27,25 +49,43 @@ export class ColorForm extends PureComponent {
             console.log(actions);
             const results = testColors(values);
             console.log(results);
+            actions.setSubmitting(false);
           }}
-          render={({ handleReset, isSubmitting }) => (
-            <div>
+          render={({ handleReset, isSubmitting }) => {
+            // This allows us to reset the form from our custom resetForm method
+            this.handleResetProxy = handleReset;
+
+            return (
               <div>
-                {colorCount}
-                / 12 Colors
-                <button type="button" onClick={handleReset}>
-                  Clear All
-                </button>
+                <div>
+                  {colorCount}
+                  / 12 Colors
+                  <button type="button" onClick={this.resetForm}>
+                    Clear All
+                  </button>
+                </div>
+                <Form>
+                  {hexInputNames.map((hexName, i) => (
+                    <Field
+                      maxLength="6"
+                      name={hexName}
+                      key={hexName}
+                      placeholder={i === 0 ? 'FFFFFF' : '000000'}
+                      type="text"
+                    />
+                  ))}
+                  <button type="button" onClick={this.addHexInput}>
+                    Add
+                  </button>
+                  <div>
+                    <button type="submit" disabled={isSubmitting}>
+                      Submit
+                    </button>
+                  </div>
+                </Form>
               </div>
-              <Form>
-                <Field type="text" name="colorA" />
-                <Field type="text" name="colorB" />
-                <button type="submit" disabled={isSubmitting}>
-                  Submit
-                </button>
-              </Form>
-            </div>
-          )}
+            )
+          }}
         />
         <br />
         <pre>{JSON.stringify(colorResults, null, 2)}</pre>
