@@ -10,6 +10,14 @@ export class ColorForm extends PureComponent {
     };
   }
 
+  addField() {
+    this.setState({ fieldNumber: this.state.fieldNumber ++ });
+  }
+
+  removeField() {
+    this.setState({ fieldNumber: this.state.fieldNumber-- });
+  }
+
   render() {
     return (
       <Formik
