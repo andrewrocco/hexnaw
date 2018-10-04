@@ -8,17 +8,8 @@ export class ColorForm extends PureComponent {
     super(props);
 
     this.state = {
-      fieldNumber: 2,
       colorResults: {},
     };
-  }
-
-  addField() {
-    this.setState({ fieldNumber: this.state.fieldNumber ++ });
-  }
-
-  removeField() {
-    this.setState({ fieldNumber: this.state.fieldNumber-- });
   }
 
   render() {
