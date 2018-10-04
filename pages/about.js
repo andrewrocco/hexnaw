@@ -2,15 +2,13 @@ import React, { Fragment } from 'react';
 
 import { AppHead } from '../src/components/layout/AppHead';
 import { Header } from '../src/ui/navigation/header/Header';
-import { ColorForm } from '../src/components/report/ColorForm';
 
-const Index = () => (
+const About = () => (
   <Fragment>
-    <AppHead />
+    <AppHead pageTitle="About" />
     <Header />
-    <div>Hex Naw!</div>
-    <ColorForm />
+    <div>The About Page</div>
   </Fragment>
 );
 
-export default Index;
+export default About;
