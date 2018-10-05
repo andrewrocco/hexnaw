@@ -39,6 +39,10 @@
         "statements": -10
       }
     },
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      ".index.*"
+    ],
     "collectCoverage": true,
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
