@@ -6,8 +6,14 @@ export const typographicColors = {
 };
 
 const colorVariables = {
+  // Buttons
   buttonPrimaryBackground: colors.blue,
   buttonPrimaryBackgroundHover: colors.blue,
+
+  // Header
+  headerLogoBackground: colors.black,
+  headerLogoFill: colors.white,
+
   ...typographicColors,
 };
 
