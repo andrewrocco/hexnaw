@@ -13,4 +13,8 @@ export const StyledLink = styled.a`
   &:hover {
     color: ${colorVariables.typeAccent};
   }
+
+  .menu-open & {
+    color: ${colorVariables.typeWhite};
+  }
 `;

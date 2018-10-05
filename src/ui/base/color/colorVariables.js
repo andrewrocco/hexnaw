@@ -3,6 +3,7 @@ import colors from './color';
 export const typographicColors = {
   typeDark: colors.black,
   typeAccent: colors.blue,
+  typeWhite: colors.white,
 };
 
 const colorVariables = {
