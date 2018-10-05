@@ -6,7 +6,7 @@ describe('HeaderLogo Component', () => {
   context('when nothing specified', () => {
     it('should render correctly', () => {
       const subject = shallow(<HeaderLogo />);
-      expect(subject).toMatchInlineSnapshot();
+      expect(subject).toMatchSnapshot();
     });
   });
 });
