@@ -10,7 +10,6 @@ export const AppHead = ({ pageTitle }) => {
   return (
     <Head>
       <title>{`Hex Naw | ${newPageTitle} A color accessibility tool for designers and developers.`}</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
     </Head>
   );
 };
