@@ -32,4 +32,4 @@ Heading.defaultProps = {
   color: 'dark',
   level: 2,
   size: 'medium',
-}
+};
