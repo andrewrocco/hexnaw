@@ -3,7 +3,7 @@ import { css } from 'styled-components';
 import fonts from './fonts';
 
 const typography = {
-  headingXLarge: css`
+  headingLarge: css`
     ${fonts.primaryBold}
     font-size: 30px;
     line-height: 1.2;
