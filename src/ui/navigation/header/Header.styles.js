@@ -35,14 +35,13 @@ export const StyledNav = styled.nav`
     text-align: center;
     top: 50%;
     transform: translate(-50%, -50%);
-    transition: all .05s ease-in-out;
     visibility: hidden;
     width: 100%;
     z-index: 500;
 
     .menu-open & {
       opacity: 1;
-      transition: all .25s .1s ease-in-out;
+      transition: visibility .05s ease-in-out, opacity .05s ease-in-out;
       visibility: visible;
     }
   }
