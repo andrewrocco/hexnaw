@@ -1,6 +1,19 @@
 import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
-import { ServerStyleSheet } from 'styled-components';
+import { ServerStyleSheet, injectGlobal } from 'styled-components';
+
+// TODO: remove when using styled-components v4
+/* eslint-disable-next-line no-unused-expressions */
+injectGlobal`
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+`;
 
 export default class MyDocument extends Document {
   static async getInitialProps({ renderPage }) {
