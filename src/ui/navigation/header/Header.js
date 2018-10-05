@@ -24,9 +24,10 @@ export class Header extends PureComponent {
 
   render() {
     const { menuOpen } = this.state;
+    const headerClasses = classnames(menuOpen && 'menu-open');
 
     return (
-      <StyledHeader alignItems="center">
+      <StyledHeader alignItems="center" className={headerClasses}>
         <Box mr="auto">
           <HeaderLogo />
         </Box>

@@ -20,5 +20,8 @@ export const StyledNav = styled.nav`
 `;
 
 export const StyledNavButton = styled.button`
-  display: none;
+  display: inline-block;
+  @media only screen and (min-width: 700px) {
+    display: none;
+  }
 `;
