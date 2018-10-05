@@ -16,7 +16,6 @@ export const StyledHeader = styled(Flex)`
         position: fixed;
         right: 0;
         top: 0;
-        transition: opacity .15s ease-in-out;
         width: 100%;
         z-index: 500;
       }
@@ -41,7 +40,6 @@ export const StyledNav = styled.nav`
 
     .menu-open & {
       opacity: 1;
-      transition: visibility .05s ease-in-out, opacity .05s ease-in-out;
       visibility: visible;
     }
   }
