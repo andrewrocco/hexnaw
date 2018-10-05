@@ -14,7 +14,9 @@ export const StyledLink = styled.a`
     color: ${colorVariables.typeAccent};
   }
 
-  .menu-open & {
+  @media only screen and (max-width: 700px) {
     color: ${colorVariables.typeWhite};
+    display: block;
+    padding: 17px;
   }
 `;
