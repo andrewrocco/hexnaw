@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Component when nothing specified should render correctly 1`] = `
+<Flex
+  alignItems="center"
+>
+  <Box
+    mr="auto"
+  >
+    <HeaderLogo />
+  </Box>
+  <Box>
+    <styled.nav>
+      <HeaderLink
+        href="/"
+      >
+        Hex Naw
+      </HeaderLink>
+      <HeaderLink
+        href="/about"
+        prefetch={true}
+      >
+        About
+      </HeaderLink>
+      <HeaderLink
+        href="https://thescenery.co"
+        prefetch={true}
+      >
+        The Scenery →
+      </HeaderLink>
+    </styled.nav>
+  </Box>
+</Flex>
+`;
