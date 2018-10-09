@@ -19,6 +19,15 @@ const typography = {
     text-transform: uppercase;
     line-height: 1.6;
   `,
+
+  // Links
+  headerLink: css`
+    ${fonts.primaryBold}
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+  `,
 };
 
 export default typography;
