@@ -23,8 +23,7 @@ export class ColorForm extends Component {
     // We need to set all possible input values up front or else
     // generated inputs will throw React's uncontrolled input error.
     // https://jaredpalmer.com/formik/docs/api/formik#initialvalues-values
-    this.maxInputs = props.maxInputs;
-    this.initialValues = getInitialValues(this.maxInputs);
+    this.initialValues = getInitialValues(props.maxInputs);
 
     this.state = {
       colorCount: 0,
@@ -105,6 +104,8 @@ export class ColorForm extends Component {
       isSubmitButtonDisabled,
     } = this.state;
 
+    const { maxInputs } = this.props;
+
     return (
       <div>
         <Formik
@@ -118,7 +119,7 @@ export class ColorForm extends Component {
             return (
               <div>
                 <div>
-                  <span>{`${colorCount} / ${this.maxInputs} Colors`}</span>
+                  <span>{`${colorCount} / ${maxInputs} Colors`}</span>
                   <button type="button" onClick={this.resetForm}>
                     Clear All
                   </button>
