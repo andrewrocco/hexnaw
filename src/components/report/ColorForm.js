@@ -1,18 +1,35 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { Formik, Form, Field } from 'formik';
 
 import testColors from '../../utils/testColors';
+
+const getInitialValues = (num) => {
+  const initial = {};
+  for (let i = 0; i < num; i += 1) {
+    initial[`hex${i}`] = '';
+  }
+  return initial;
+};
+
+const getInitialInputNames = inputValues => Object
+  .keys(inputValues)
+  .slice(0, 2);
 
 export class ColorForm extends PureComponent {
   constructor(props) {
     super(props);
 
-    this.initialValues = { hex0: '', hex1: '' };
+    // We need to set all possible input values up front or else
+    // generated inputs will throw React's uncontrolled input error.
+    // https://jaredpalmer.com/formik/docs/api/formik#initialvalues-values
+    this.maxInputs = props.maxInputs;
+    this.initialValues = getInitialValues(this.maxInputs);
 
     this.state = {
       colorCount: 0,
       colorResults: {},
-      hexInputNames: Object.keys(this.initialValues),
+      hexInputNames: getInitialInputNames(this.initialValues),
       isAddButtonDisabled: true,
       isSubmitButtonDisabled: true,
     };
@@ -28,7 +45,9 @@ export class ColorForm extends PureComponent {
     const { hexInputNames } = this.state;
 
     if (prevState.hexInputNames.length < hexInputNames.length) {
-      document.querySelector(`[name="hex${hexInputNames.length - 1}"]`).focus();
+      if (document.body.innerHTML) {
+        document.querySelector(`input[name="hex${hexInputNames.length - 1}"]`).focus();
+      }
     }
   }
 
@@ -47,7 +66,7 @@ export class ColorForm extends PureComponent {
   resetForm() {
     this.setState({
       colorCount: 0,
-      hexInputNames: Object.keys(this.initialValues),
+      hexInputNames: getInitialInputNames(this.initialValues),
       isAddButtonDisabled: true,
       isSubmitButtonDisabled: true,
     });
@@ -106,6 +125,7 @@ export class ColorForm extends PureComponent {
                 <Form>
                   {hexInputNames.map((hexName, i) => (
                     <Field
+                      id={hexName}
                       maxLength="6"
                       name={hexName}
                       key={hexName}
@@ -139,3 +159,7 @@ export class ColorForm extends PureComponent {
     );
   }
 }
+
+ColorForm.propTypes = {
+  maxInputs: PropTypes.number,
+};

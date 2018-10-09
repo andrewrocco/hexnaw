@@ -5,7 +5,6 @@ import { HeaderLink } from '../header_link/HeaderLink';
 
 export const Header = () => (
   <Flex>
-    <Box mr="auto">Hello</Box>
     <Box alignSelf="flex-end">
       <HeaderLink href="/">Hex Naw</HeaderLink>
       <HeaderLink href="/about" prefetch>About</HeaderLink>
