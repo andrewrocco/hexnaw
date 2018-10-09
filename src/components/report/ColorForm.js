@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Formik, Form, Field } from 'formik';
 
@@ -16,7 +16,7 @@ const getInitialInputNames = inputValues => Object
   .keys(inputValues)
   .slice(0, 2);
 
-export class ColorForm extends PureComponent {
+export class ColorForm extends Component {
   constructor(props) {
     super(props);
 
@@ -76,16 +76,18 @@ export class ColorForm extends PureComponent {
 
   handleValidation(values) {
     const { hexInputNames } = this.state;
+    const { maxInputs } = this.props;
     const validHexValues = Object.keys(values).filter(hexID => (
       (/^[a-fA-F0-9]{6}$|^[a-fA-F0-9]{3}$/).test(values[hexID])
     ));
     const hasInvalid = validHexValues.length !== hexInputNames.length;
-    const notEnough = validHexValues.length < 2;
+    const hasMaxInputs = hexInputNames.length === maxInputs;
+    const notEnoughValid = validHexValues.length < 2;
 
     this.setState({
       colorCount: validHexValues.length,
-      isAddButtonDisabled: hasInvalid,
-      isSubmitButtonDisabled: hasInvalid || notEnough,
+      isAddButtonDisabled: hasMaxInputs || hasInvalid,
+      isSubmitButtonDisabled: hasInvalid || notEnoughValid,
     });
   }
 
@@ -116,8 +118,7 @@ export class ColorForm extends PureComponent {
             return (
               <div>
                 <div>
-                  {colorCount}
-                  / 12 Colors
+                  <span>{`${colorCount} / ${this.maxInputs} Colors`}</span>
                   <button type="button" onClick={this.resetForm}>
                     Clear All
                   </button>

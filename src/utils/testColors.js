@@ -4,8 +4,8 @@ const testColors = (colors) => {
   // remove empty string values from object
   const cleanColors = Object
     .values(colors)
-    .map(c => `#${c}`)
-    .filter(v => v !== '');
+    .filter(v => v)
+    .map(c => `#${c}`);
   const result = colorable(cleanColors, { compact: true, threshold: 0 });
 
   return result;
