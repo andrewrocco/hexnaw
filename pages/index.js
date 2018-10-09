@@ -10,9 +10,8 @@ const Index = () => (
   <Fragment>
     <AppHead />
     <Header />
-    <div>Hex Naw!</div>
     <Heading>Hello</Heading>
-    <ColorForm />
+    <ColorForm maxInputs={12} />
   </Fragment>
 );
 
