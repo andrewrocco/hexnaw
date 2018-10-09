@@ -24,14 +24,15 @@ export class ColorForm extends Component {
     // generated inputs will throw React's uncontrolled input error.
     // https://jaredpalmer.com/formik/docs/api/formik#initialvalues-values
     this.initialValues = getInitialValues(props.maxInputs);
-
-    this.state = {
+    this.initialState = {
       colorCount: 0,
       colorResults: {},
       hexInputNames: getInitialInputNames(this.initialValues),
       isAddButtonDisabled: true,
       isSubmitButtonDisabled: true,
     };
+
+    this.state = this.initialState;
 
     this.handleResetProxy = null;
     this.addHexInput = this.addHexInput.bind(this);
@@ -63,13 +64,7 @@ export class ColorForm extends Component {
   }
 
   resetForm() {
-    this.setState({
-      colorCount: 0,
-      hexInputNames: getInitialInputNames(this.initialValues),
-      isAddButtonDisabled: true,
-      isSubmitButtonDisabled: true,
-    });
-
+    this.setState({ ...this.initialState });
     this.handleResetProxy();
   }
 
