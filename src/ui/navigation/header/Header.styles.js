@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 import { Flex } from '@rebass/grid';
 
+import { breakpoints } from 'ui/base';
+
 export const StyledHeader = styled(Flex)`
   position: relative;
 
   &.menu-open {
     &:before {
-      @media only screen and (max-width: 700px) {
+      ${breakpoints.medium.max} {
         background: rgba(0, 0, 0, .95);
         border-bottom: 1px solid rgba(0, 0, 0, .95);
         bottom: 0;
@@ -26,7 +28,7 @@ export const StyledHeader = styled(Flex)`
 export const StyledNav = styled.nav`
   padding: 21px 22px;
 
-  @media only screen and (max-width: 700px) {
+  ${breakpoints.medium.max} {
     box-sizing: content-box;
     left: 50%;
     opacity: 0;
@@ -52,7 +54,7 @@ export const StyledNavButton = styled.button`
   right: 0;
   z-index: 501;
 
-  @media only screen and (min-width: 700px) {
+  ${breakpoints.medium.min} {
     display: none;
   }
 `;

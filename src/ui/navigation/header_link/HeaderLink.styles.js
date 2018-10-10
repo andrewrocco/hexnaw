@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { colorVariables, typography } from 'ui/base';
+import { breakpoints, colorVariables, typography } from 'ui/base';
 
 export const StyledLink = styled.a`
   ${typography.headerLink}
@@ -13,7 +13,7 @@ export const StyledLink = styled.a`
     color: ${colorVariables.typeAccent};
   }
 
-  @media only screen and (max-width: 700px) {
+  ${breakpoints.medium.max} {
     color: ${colorVariables.typeWhite};
     display: block;
     padding: 17px;
