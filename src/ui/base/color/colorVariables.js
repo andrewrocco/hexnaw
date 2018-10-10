@@ -20,6 +20,8 @@ const colorVariables = {
 
   // Input
   inputBackground: colors.white,
+  inputClose: colors.gray70,
+  inputCloseHover: colors.violet,
   inputPrefix: colors.gray70,
   inputPrefixFocus: colors.violet,
 
