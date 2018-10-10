@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Formik, Form, Field } from 'formik';
 import { Box, Flex } from '@rebass/grid';
@@ -121,7 +121,7 @@ export class ColorForm extends Component {
               this.handleResetProxy = handleReset;
 
               return (
-                <div>
+                <Fragment>
                   <Flex
                     alignItems="center"
                     flexWrap="wrap"
@@ -152,33 +152,38 @@ export class ColorForm extends Component {
                     </Box>
                   </Flex>
                   <Form>
-                    {hexInputNames.map((hexName, i) => (
-                      <Field
-                        id={hexName}
-                        maxLength="6"
-                        name={hexName}
-                        key={hexName}
-                        placeholder={i === 0 ? 'FFFFFF' : '000000'}
-                        type="text"
-                      />
-                    ))}
-                    <button
-                      disabled={isAddButtonDisabled}
-                      onClick={this.addHexInput}
-                      type="button"
-                    >
-                      Add
-                    </button>
-                    <div>
+                    <Flex mx={-2} flexWrap="wrap">
+                      {hexInputNames.map((hexName, i) => (
+                        <Box key={hexName} mb={3} px={2} width={[1, 1 / 3]}>
+                          <Field
+                            id={hexName}
+                            maxLength="6"
+                            name={hexName}
+                            placeholder={i === 0 ? 'FFFFFF' : '000000'}
+                            type="text"
+                          />
+                        </Box>
+                      ))}
+                      <Box mb={3} px={2} width={[1, 1 / 3]}>
+                        <button
+                          disabled={isAddButtonDisabled}
+                          onClick={this.addHexInput}
+                          type="button"
+                        >
+                          Add
+                        </button>
+                      </Box>
+                    </Flex>
+                    <Box mt={5}>
                       <button
                         disabled={isSubmitting || isSubmitButtonDisabled}
                         type="submit"
                       >
-                        Submit
+                        Test Colors
                       </button>
-                    </div>
+                    </Box>
                   </Form>
-                </div>
+                </Fragment>
               );
             }}
           />
