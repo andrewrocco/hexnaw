@@ -18,6 +18,11 @@ const colorVariables = {
   headerLogoBackground: colors.black,
   headerLogoFill: colors.white,
 
+  // Input
+  inputBackground: colors.white,
+  inputPrefix: colors.gray70,
+  inputPrefixFocus: colors.violet,
+
   ...typographicColors,
 };
 

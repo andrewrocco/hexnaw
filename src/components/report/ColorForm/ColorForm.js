@@ -5,6 +5,7 @@ import { Box, Flex } from '@rebass/grid';
 
 import { testColors } from 'utils';
 import { Heading } from 'ui/typography';
+import { Input } from 'ui/inputs';
 
 import {
   ColorFormContainer,
@@ -156,11 +157,11 @@ export class ColorForm extends Component {
                       {hexInputNames.map((hexName, i) => (
                         <Box key={hexName} mb={3} px={2} width={[1, 1 / 3]}>
                           <Field
+                            component={Input}
                             id={hexName}
                             maxLength="6"
                             name={hexName}
                             placeholder={i === 0 ? 'FFFFFF' : '000000'}
-                            type="text"
                           />
                         </Box>
                       ))}
