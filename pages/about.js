@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 
-import { AppHead } from '../src/components/layout/AppHead';
-import { Header } from '../src/ui/navigation/header';
+import { AppHead } from 'components/layout';
+import { Header } from 'ui/navigation';
 
 const About = () => (
   <Fragment>

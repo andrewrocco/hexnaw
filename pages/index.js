@@ -1,10 +1,9 @@
 import React, { Fragment } from 'react';
 
-import { AppHead } from '../src/components/layout/AppHead';
-import { Header } from '../src/ui/navigation/header';
-import { ColorForm } from '../src/components/report/ColorForm';
-
-import { Heading } from '../src/ui/typography/heading';
+import { ColorForm } from 'components/report';
+import { AppHead } from 'components/layout';
+import { Header } from 'ui/navigation';
+import { Heading } from 'ui/typography';
 
 const Index = () => (
   <Fragment>

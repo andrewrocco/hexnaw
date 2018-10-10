@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Formik, Form, Field } from 'formik';
 
-import testColors from '../../utils/testColors';
+import { testColors } from 'utils';
 
 const getInitialValues = (num) => {
   const initial = {};

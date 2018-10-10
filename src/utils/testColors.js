@@ -1,6 +1,6 @@
 import colorable from 'colorable';
 
-const testColors = (colors) => {
+export const testColors = (colors) => {
   // remove empty string values from object
   const cleanColors = Object
     .values(colors)
@@ -10,5 +10,3 @@ const testColors = (colors) => {
 
   return result;
 };
-
-export default testColors;
