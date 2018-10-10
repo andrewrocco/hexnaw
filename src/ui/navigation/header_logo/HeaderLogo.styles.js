@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import colorVariables from '../../base/color/colorVariables';
+import { colorVariables } from 'ui/base';
 
 export const StyledLink = styled.a`
   background: ${colorVariables.headerLogoBackground};

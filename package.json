@@ -13,12 +13,12 @@
     "styled-components": "^3.4.9"
   },
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "test": "NODE_ENV=test jest",
-    "test:watch": "NODE_ENV=test jest --watch",
-    "test:coverage": "NODE_ENV=test jest --coverage"
+    "dev": "NODE_PATH=src next",
+    "build": "NODE_PATH=src next build",
+    "start": "NODE_PATH=src next start",
+    "test": "NODE_ENV=test NODE_PATH=src jest",
+    "test:watch": "NODE_ENV=test NODE_PATH=src jest --watch",
+    "test:coverage": "NODE_ENV=test NODE_PATH=src jest --coverage"
   },
   "jest": {
     "setupFiles": [

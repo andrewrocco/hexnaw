@@ -2,7 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-import colorVariables from '../../base/color/colorVariables';
+import { colorVariables } from 'ui/base';
 import { StyledLink, StyledSVG } from './HeaderLogo.styles';
 
 export const HeaderLogo = () => (

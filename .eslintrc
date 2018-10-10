@@ -64,7 +64,10 @@
   },
   "settings": {
     "import/resolver": {
-      "babel-module": {}
+      "babel-module": {},
+      "node": {
+        "paths": ["src"]
+      }
     }
   }
 }

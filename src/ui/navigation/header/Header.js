@@ -2,8 +2,7 @@ import React, { PureComponent } from 'react';
 import { Box } from '@rebass/grid';
 import classnames from 'classnames';
 
-import { HeaderLink } from '../header_link';
-import { HeaderLogo } from '../header_logo';
+import { HeaderLink, HeaderLogo } from 'ui/navigation';
 import { StyledHeader, StyledNav, StyledNavButton } from './Header.styles';
 
 export class Header extends PureComponent {

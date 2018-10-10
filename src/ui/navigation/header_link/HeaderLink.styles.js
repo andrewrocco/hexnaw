@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
-import typography from '../../base/typography/typography';
-import colorVariables from '../../base/color/colorVariables';
+import { colorVariables, typography } from 'ui/base';
 
 export const StyledLink = styled.a`
   ${typography.headerLink}
