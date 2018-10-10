@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Formik, Form, Field } from 'formik';
+import { Box, Flex } from '@rebass/grid';
 
 import { testColors } from 'utils';
+import { Heading } from 'ui/typography';
+
+import {
+  ColorFormContainer,
+  ColorFormInnerWrap,
+} from './ColorForm.styles';
 
 const getInitialValues = (num) => {
   const initial = {};
@@ -86,14 +93,15 @@ export class ColorForm extends Component {
   }
 
   handleSubmit(values, actions) {
+    const { onSubmit } = this.props;
+
     actions.setSubmitting(false);
-    this.setState({ colorResults: testColors(values) });
+    onSubmit(testColors(values));
   }
 
   render() {
     const {
       colorCount,
-      colorResults,
       hexInputNames,
       isAddButtonDisabled,
       isSubmitButtonDisabled,
@@ -102,61 +110,85 @@ export class ColorForm extends Component {
     const { maxInputs } = this.props;
 
     return (
-      <div>
-        <Formik
-          initialValues={this.initialValues}
-          validate={this.handleValidation}
-          onSubmit={this.handleSubmit}
-          render={({ handleReset, isSubmitting }) => {
-            // This allows us to reset the form from our custom resetForm method
-            this.handleResetProxy = handleReset;
+      <ColorFormContainer m={4}>
+        <ColorFormInnerWrap m="0 auto" px={4} py={6}>
+          <Formik
+            initialValues={this.initialValues}
+            validate={this.handleValidation}
+            onSubmit={this.handleSubmit}
+            render={({ handleReset, isSubmitting }) => {
+              // This allows us to reset the form from our custom resetForm method
+              this.handleResetProxy = handleReset;
 
-            return (
-              <div>
+              return (
                 <div>
-                  <span>{`${colorCount} / ${maxInputs} Colors`}</span>
-                  <button type="button" onClick={this.resetForm}>
-                    Clear All
-                  </button>
-                </div>
-                <Form>
-                  {hexInputNames.map((hexName, i) => (
-                    <Field
-                      id={hexName}
-                      maxLength="6"
-                      name={hexName}
-                      key={hexName}
-                      placeholder={i === 0 ? 'FFFFFF' : '000000'}
-                      type="text"
-                    />
-                  ))}
-                  <button
-                    disabled={isAddButtonDisabled}
-                    onClick={this.addHexInput}
-                    type="button"
+                  <Flex
+                    alignItems="center"
+                    flexWrap="wrap"
+                    justifyContent="space-between"
+                    mb={4}
                   >
-                    Add
-                  </button>
-                  <div>
-                    <button
-                      disabled={isSubmitting || isSubmitButtonDisabled}
-                      type="submit"
+                    <Box
+                      flex={['1 0 auto', '0 1 auto']}
+                      width={[1, 'auto']}
                     >
-                      Submit
+                      <Heading level={2} size="small">
+                        Enter Your Hex Values
+                      </Heading>
+                    </Box>
+                    <Box
+                      flex={['1 0 auto', '0 1 auto']}
+                      width={[1, 'auto']}
+                    >
+                      <Flex
+                        justifyContent="space-between"
+                        mt={[4, 0]}
+                      >
+                        <span>{`${colorCount} / ${maxInputs} Colors`}</span>
+                        <button type="button" onClick={this.resetForm}>
+                          Clear All
+                        </button>
+                      </Flex>
+                    </Box>
+                  </Flex>
+                  <Form>
+                    {hexInputNames.map((hexName, i) => (
+                      <Field
+                        id={hexName}
+                        maxLength="6"
+                        name={hexName}
+                        key={hexName}
+                        placeholder={i === 0 ? 'FFFFFF' : '000000'}
+                        type="text"
+                      />
+                    ))}
+                    <button
+                      disabled={isAddButtonDisabled}
+                      onClick={this.addHexInput}
+                      type="button"
+                    >
+                      Add
                     </button>
-                  </div>
-                </Form>
-              </div>
-            );
-          }}
-        />
-        <br />
-        <pre>{JSON.stringify(colorResults, null, 2)}</pre>
-      </div>
+                    <div>
+                      <button
+                        disabled={isSubmitting || isSubmitButtonDisabled}
+                        type="submit"
+                      >
+                        Submit
+                      </button>
+                    </div>
+                  </Form>
+                </div>
+              );
+            }}
+          />
+        </ColorFormInnerWrap>
+      </ColorFormContainer>
     );
   }
 }
 
 ColorForm.propTypes = {
   maxInputs: PropTypes.number,
+  onSubmit: PropTypes.func,
 };
