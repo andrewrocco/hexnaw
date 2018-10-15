@@ -5,6 +5,7 @@ import { Box, Flex } from '@rebass/grid';
 
 import { testColors } from 'utils';
 import { Heading } from 'ui/typography';
+import { Input } from 'ui/inputs';
 
 import {
   ColorFormContainer,
@@ -42,8 +43,11 @@ export class ColorForm extends Component {
     this.state = this.initialState;
 
     this.handleResetProxy = null;
+    this.setFieldValueProxy = null;
+
     this.addHexInput = this.addHexInput.bind(this);
     this.resetForm = this.resetForm.bind(this);
+    this.handleFieldRemove = this.handleFieldRemove.bind(this);
     this.handleValidation = this.handleValidation.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -73,6 +77,21 @@ export class ColorForm extends Component {
   resetForm() {
     this.setState({ ...this.initialState });
     this.handleResetProxy();
+  }
+
+  handleFieldRemove(index) {
+    return index < 2
+      ? null
+      : () => {
+        const id = `hex${index}`;
+        this.setFieldValueProxy(id, '');
+        this.setState(({ hexInputNames }) => ({
+          hexInputNames: [
+            ...hexInputNames.slice(0, index),
+            ...hexInputNames.slice(index + 1),
+          ],
+        }));
+      };
   }
 
   handleValidation(values) {
@@ -116,9 +135,10 @@ export class ColorForm extends Component {
             initialValues={this.initialValues}
             validate={this.handleValidation}
             onSubmit={this.handleSubmit}
-            render={({ handleReset, isSubmitting }) => {
+            render={({ handleReset, isSubmitting, setFieldValue }) => {
               // This allows us to reset the form from our custom resetForm method
               this.handleResetProxy = handleReset;
+              this.setFieldValueProxy = setFieldValue;
 
               return (
                 <Fragment>
@@ -156,11 +176,12 @@ export class ColorForm extends Component {
                       {hexInputNames.map((hexName, i) => (
                         <Box key={hexName} mb={3} px={2} width={[1, 1 / 3]}>
                           <Field
+                            component={Input}
                             id={hexName}
                             maxLength="6"
                             name={hexName}
+                            onRemove={this.handleFieldRemove(i)}
                             placeholder={i === 0 ? 'FFFFFF' : '000000'}
-                            type="text"
                           />
                         </Box>
                       ))}

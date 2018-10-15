@@ -28,6 +28,12 @@ const typography = {
     text-decoration: none;
     text-transform: uppercase;
   `,
+
+  // Inputs
+  input: css`
+    ${fonts.primaryBold}
+    font-size: 16px;
+  `,
 };
 
 export default typography;
