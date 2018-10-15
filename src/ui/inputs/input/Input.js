@@ -8,7 +8,7 @@ import {
   StyledWrap,
 } from './Input.styles';
 
-const getValidHex = value => (
+export const getValidHex = value => (
   (/^[a-fA-F0-9]{6}$|^[a-fA-F0-9]{3}$/).test(value)
     ? `#${value}`
     : 'transparent'
