@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 import { colors, spacing, typography } from 'ui/base';
 
-const modeStyles = {
+export const modeStyles = {
   inverse: {
     enabled: {
       background: 'transparent',
