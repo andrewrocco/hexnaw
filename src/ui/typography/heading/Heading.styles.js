@@ -12,6 +12,7 @@ export const headingSizes = {
 export const headingColors = {
   dark: typographicColors.typeDark,
   accent: typographicColors.typeAccent,
+  white: typographicColors.typeWhite,
 };
 
 const HeadingBase = styled.span`
