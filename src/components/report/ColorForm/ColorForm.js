@@ -5,7 +5,7 @@ import { Box, Flex } from '@rebass/grid';
 
 import { testColors } from 'utils';
 import { Heading } from 'ui/typography';
-import { Input } from 'ui/inputs';
+import { Button, Input } from 'ui/inputs';
 
 import {
   ColorFormContainer,
@@ -165,9 +165,13 @@ export class ColorForm extends Component {
                         mt={[4, 0]}
                       >
                         <span>{`${colorCount} / ${maxInputs} Colors`}</span>
-                        <button type="button" onClick={this.resetForm}>
+                        <Button
+                          mode="none"
+                          type="button"
+                          onClick={this.resetForm}
+                        >
                           Clear All
-                        </button>
+                        </Button>
                       </Flex>
                     </Box>
                   </Flex>
@@ -186,13 +190,14 @@ export class ColorForm extends Component {
                         </Box>
                       ))}
                       <Box mb={3} px={2} width={[1, 1 / 3]}>
-                        <button
+                        <Button
                           disabled={isAddButtonDisabled}
+                          mode="inverse"
                           onClick={this.addHexInput}
+                          text="Add"
                           type="button"
-                        >
-                          Add
-                        </button>
+                          style={{ height: 67, width: '100%' }}
+                        />
                       </Box>
                     </Flex>
                     <Box mt={5}>
