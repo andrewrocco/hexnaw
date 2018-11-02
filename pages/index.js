@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { ThemeProvider } from 'styled-components';
 
 import { ColorForm } from 'components/report';
-import { AppHead } from 'components/layout';
+import { AppHead, Hero } from 'components/layout';
 import { Header } from 'ui/navigation';
 import { theme } from 'ui/base';
 
@@ -23,6 +23,7 @@ class Index extends Component {
         <Fragment>
           <AppHead />
           <Header />
+          <Hero />
           <ColorForm
             maxInputs={12}
             onSubmit={(results) => {
