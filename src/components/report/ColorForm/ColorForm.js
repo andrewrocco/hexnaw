@@ -5,12 +5,10 @@ import { Box, Flex } from '@rebass/grid';
 
 import { testColors } from 'utils';
 import { Heading } from 'ui/typography';
-import { Input } from 'ui/inputs';
+import { Button, Input } from 'ui/inputs';
+import { Icon } from 'ui/icons';
 
-import {
-  ColorFormContainer,
-  ColorFormInnerWrap,
-} from './ColorForm.styles';
+import * as Styled from './ColorForm.styles';
 
 const getInitialValues = (num) => {
   const initial = {};
@@ -129,8 +127,8 @@ export class ColorForm extends Component {
     const { maxInputs } = this.props;
 
     return (
-      <ColorFormContainer m={4}>
-        <ColorFormInnerWrap m="0 auto" px={4} py={6}>
+      <Styled.FormContainer m={4}>
+        <Styled.FormInnerWrap m="0 auto" px={4} py={6}>
           <Formik
             initialValues={this.initialValues}
             validate={this.handleValidation}
@@ -160,15 +158,20 @@ export class ColorForm extends Component {
                       flex={['1 0 auto', '0 1 auto']}
                       width={[1, 'auto']}
                     >
-                      <Flex
+                      <Styled.FormToolbar
                         justifyContent="space-between"
                         mt={[4, 0]}
                       >
                         <span>{`${colorCount} / ${maxInputs} Colors`}</span>
-                        <button type="button" onClick={this.resetForm}>
-                          Clear All
-                        </button>
-                      </Flex>
+                        <Styled.FormClearButton
+                          mode="none"
+                          type="button"
+                          onClick={this.resetForm}
+                        >
+                          <span>Clear All</span>
+                          <Icon icon="Close" />
+                        </Styled.FormClearButton>
+                      </Styled.FormToolbar>
                     </Box>
                   </Flex>
                   <Form>
@@ -186,30 +189,31 @@ export class ColorForm extends Component {
                         </Box>
                       ))}
                       <Box mb={3} px={2} width={[1, 1 / 3]}>
-                        <button
+                        <Button
                           disabled={isAddButtonDisabled}
+                          mode="inverse"
                           onClick={this.addHexInput}
+                          text="Add"
                           type="button"
-                        >
-                          Add
-                        </button>
+                          style={{ height: 67, width: '100%' }}
+                        />
                       </Box>
                     </Flex>
-                    <Box mt={5}>
-                      <button
+                    <Styled.SubmitWrapper mt={5}>
+                      <Button
                         disabled={isSubmitting || isSubmitButtonDisabled}
+                        text="Test Colors"
                         type="submit"
-                      >
-                        Test Colors
-                      </button>
-                    </Box>
+                        style={{ height: 67, width: 200 }}
+                      />
+                    </Styled.SubmitWrapper>
                   </Form>
                 </Fragment>
               );
             }}
           />
-        </ColorFormInnerWrap>
-      </ColorFormContainer>
+        </Styled.FormInnerWrap>
+      </Styled.FormContainer>
     );
   }
 }

@@ -3,6 +3,11 @@ import { css } from 'styled-components';
 import fonts from './fonts';
 
 const typography = {
+  copySmall: css`
+    ${fonts.primaryMedium}
+    font-size: 14px;
+    line-height: 1.6;
+  `,
   copyMedium: css`
     ${fonts.primaryMedium}
     font-size: 17px;

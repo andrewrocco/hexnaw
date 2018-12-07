@@ -11,9 +11,6 @@ const colorVariables = {
   buttonPrimaryBackground: colors.blue,
   buttonPrimaryBackgroundHover: colors.blue,
 
-  // ColorForm
-  colorFormBackground: colors.gray40,
-
   // Header
   headerLogoBackground: colors.black,
   headerLogoFill: colors.white,
