@@ -2,14 +2,16 @@ import styled from 'styled-components';
 import { Box, Flex } from '@rebass/grid';
 import { breakpoints, colors, typography } from 'ui/base';
 
-export const ToolbarInner = styled(Flex)`
-  margin: 0 auto;
-  max-width: 1000px;
-
+export const ToolbarWrap = styled(Box)`
   ${breakpoints.medium.min} {
     border-bottom: 1px solid ${colors.gray30};
     border-top: 1px solid ${colors.gray30};
   }
+`;
+
+export const ToolbarInner = styled(Flex)`
+  margin: 0 auto;
+  max-width: 1000px;
 `;
 
 export const ToolbarHelpButton = styled.button`
@@ -19,6 +21,7 @@ export const ToolbarHelpButton = styled.button`
   cursor: pointer;
   font-size: inherit;
   height: 70px;
+  max-width: 200px;
   width: 100%;
 
   ${breakpoints.medium.min} {
@@ -62,4 +65,17 @@ export const ToolbarNumber = styled.span`
     display: inline-block;
     margin-right: 4px;
   }
+`;
+
+export const ToolbarAside = styled.aside`
+  display: ${p => (p.isOpen ? 'block' : 'none')};
+
+  ${breakpoints.medium.min} {
+    border-top: 1px solid ${colors.gray30};
+  }
+`;
+
+export const ToolbarAsideInner = styled(Flex)`
+  margin: 0 auto;
+  max-width: 1000px;
 `;

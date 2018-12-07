@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Box, Flex } from '@rebass/grid';
 
-import { Text } from 'ui/typography';
+import { Heading, Text } from 'ui/typography';
 import { colors } from 'ui/base';
 
 import * as Styled from './Report.styles';
@@ -39,7 +39,7 @@ export class ReportToolbar extends React.Component {
     const { isHelpVisible } = this.state;
 
     return (
-      <div>
+      <Styled.ToolbarWrap>
         <Styled.ToolbarInner {...toolbarInnerProps}>
           <Styled.ToolbarSection {...toolbarSectionProps}>
             <Styled.ToolbarNumber color={colors.blue}>
@@ -62,11 +62,13 @@ export class ReportToolbar extends React.Component {
             </Styled.ToolbarHelpButton>
           </Styled.ToolbarSection>
         </Styled.ToolbarInner>
-        {isHelpVisible && (
-          <div>
+        <Styled.ToolbarAside isOpen={isHelpVisible}>
+          <Styled.ToolbarAsideInner
+            p={4}
+          >
             <div>
-              <h3>Contrast Ratio</h3>
-              <p>The contrast ratio is the difference in luminance between the two colors.</p>
+              <Heading level={4} size="xsmall">Contrast Ratio</Heading>
+              <Text size={['xsmall']}>The contrast ratio is the difference in luminance between the two colors.</Text>
             </div>
             <div>
               <h3>Large Text</h3>
@@ -76,9 +78,9 @@ export class ReportToolbar extends React.Component {
               <h3>Small Text</h3>
               <p>Small text is defined as 17px bold text or smaller, or 23px regular text or smaller.</p>
             </div>
-          </div>
-        )}
-      </div>
+          </Styled.ToolbarAsideInner>
+        </Styled.ToolbarAside>
+      </Styled.ToolbarWrap>
     );
   }
 }

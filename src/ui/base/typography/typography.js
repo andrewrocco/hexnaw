@@ -5,7 +5,7 @@ import fonts from './fonts';
 const typography = {
   copyXSmall: css`
     ${fonts.primaryMedium}
-    font-size: 13px;
+    font-size: 12px;
     line-height: 1.6;
   `,
   copySmall: css`
