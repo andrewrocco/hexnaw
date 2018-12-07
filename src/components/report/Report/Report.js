@@ -1,19 +1,11 @@
 import React from 'react';
 
-export class Report extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      colorResults: {},
-    };
-  }
+import { ReportToolbar } from './ReportToolbar';
 
-  render() {
-    return (
-      <div>
-        Report Wrapper
-
-      </div>
-    );
-  }
+export const Report = ({ colorResults }) => {
+  return (
+    <div>
+      <ReportToolbar />
+    </div>
+  );
 }

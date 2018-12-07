@@ -24,8 +24,8 @@ export class ReportToolbar extends React.Component {
     return (
       <div>
         <div>
-          <span>{yeahCount}</span>
-          <span>{nawCount}</span>
+          <span>Yeah {yeahCount}</span>
+          <span>Naw {nawCount}</span>
           <span>Show only passing colors</span>
           <button type="button" onClick={togglePassingColors}>Toggle</button>
           <button type="button" onClick={this.toggleHelpWindow}>Help</button>
