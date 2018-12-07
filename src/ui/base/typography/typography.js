@@ -3,6 +3,11 @@ import { css } from 'styled-components';
 import fonts from './fonts';
 
 const typography = {
+  copyXSmall: css`
+    ${fonts.primaryMedium}
+    font-size: 13px;
+    line-height: 1.6;
+  `,
   copySmall: css`
     ${fonts.primaryMedium}
     font-size: 14px;
@@ -11,6 +16,11 @@ const typography = {
   copyMedium: css`
     ${fonts.primaryMedium}
     font-size: 17px;
+    line-height: 1.6;
+  `,
+  copyLarge: css`
+    ${fonts.primaryMedium}
+    font-size: 24px;
     line-height: 1.6;
   `,
   headingLarge: css`
@@ -26,6 +36,12 @@ const typography = {
   headingSmall: css`
     ${fonts.primaryBold}
     font-size: 14px;
+    text-transform: uppercase;
+    line-height: 1.6;
+  `,
+  headingXSmall: css`
+    ${fonts.primaryBold}
+    font-size: 12px;
     text-transform: uppercase;
     line-height: 1.6;
   `,

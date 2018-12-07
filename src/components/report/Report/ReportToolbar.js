@@ -1,12 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Box, Flex } from '@rebass/grid';
+
+import { Text } from 'ui/typography';
+import { colors } from 'ui/base';
+
+import * as Styled from './Report.styles';
+
+const toolbarInnerProps = {
+  flexDirection: ['column', 'row'],
+  px: [0, 4],
+};
+
+const toolbarSectionProps = {
+  alignItems: 'bottom',
+  justifyContent: ['center', 'flex-start'],
+  px: [4, 0],
+  py: 4,
+};
 
 export class ReportToolbar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isHelpVisible: false,
-      isShowingPassingColors: false,
     };
     this.toggleHelpWindow = this.toggleHelpWindow.bind(this);
   }
@@ -18,18 +35,33 @@ export class ReportToolbar extends React.Component {
   }
 
   render() {
-    const { nawCount, togglePassingColors, yeahCount } = this.props;
+    const { isShowingPassing, nawCount, togglePassingColors, yeahCount } = this.props;
     const { isHelpVisible } = this.state;
 
     return (
       <div>
-        <div>
-          <span>Yeah {yeahCount}</span>
-          <span>Naw {nawCount}</span>
-          <span>Show only passing colors</span>
-          <button type="button" onClick={togglePassingColors}>Toggle</button>
-          <button type="button" onClick={this.toggleHelpWindow}>Help</button>
-        </div>
+        <Styled.ToolbarInner {...toolbarInnerProps}>
+          <Styled.ToolbarSection {...toolbarSectionProps}>
+            <Styled.ToolbarNumber color={colors.blue}>
+              <em>{yeahCount}</em>
+              Yeah
+            </Styled.ToolbarNumber>
+            <Box ml={4} />
+            <Styled.ToolbarNumber color={colors.violet}>
+              <em>{nawCount}</em>
+              Naw
+            </Styled.ToolbarNumber>
+          </Styled.ToolbarSection>
+          <Styled.ToolbarSection {...toolbarSectionProps} px={4}>
+            <Text>Show only passing colors</Text>
+            <button type="button" onClick={togglePassingColors}>Toggle</button>
+          </Styled.ToolbarSection>
+          <Styled.ToolbarSection {...toolbarSectionProps} px={0} py={0}>
+            <Styled.ToolbarHelpButton onClick={this.toggleHelpWindow}>
+              <Text color="violet">Help</Text>
+            </Styled.ToolbarHelpButton>
+          </Styled.ToolbarSection>
+        </Styled.ToolbarInner>
         {isHelpVisible && (
           <div>
             <div>
@@ -57,6 +89,7 @@ ReportToolbar.defaultProps = {
 };
 
 ReportToolbar.propTypes = {
+  isShowingPassing: PropTypes.bool,
   nawCount: PropTypes.number,
   togglePassingColors: PropTypes.func,
   yeahCount: PropTypes.number,

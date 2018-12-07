@@ -11,7 +11,7 @@ class Index extends Component {
     super(props);
 
     this.state = {
-      colorResults: {},
+      colorResults: [],
     };
   }
 
@@ -30,7 +30,9 @@ class Index extends Component {
               this.setState({ colorResults: results });
             }}
           />
-          <Report colorResults={colorResults} />
+          {(
+            <Report colorResults={colorResults} />
+          )}
           <pre>{JSON.stringify(colorResults, null, 2)}</pre>
         </Fragment>
       </ThemeProvider>
