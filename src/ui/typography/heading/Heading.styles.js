@@ -7,6 +7,7 @@ export const headingSizes = {
   large: typography.headingLarge,
   medium: typography.headingMedium,
   small: typography.headingSmall,
+  xsmall: typography.headingXSmall,
 };
 
 export const headingColors = {
