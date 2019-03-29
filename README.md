@@ -1,15 +1,15 @@
 # HexNaw + Next.js
 ## Setup
-* `npm i`
+* `yarn`
 
 ## Development
-* `npm run dev`
+* `yarn dev`
 
 ## Testing
-* `npm run test`
-* `npm run test:watch`
-* `npm run test:coverage`
+* `yarn test`
+* `yarn test:watch`
+* `yarn test:coverage`
 
 ## Production
-* `npm run build`
-* `npm start`
+* `yarn build`
+* `yarn start`
