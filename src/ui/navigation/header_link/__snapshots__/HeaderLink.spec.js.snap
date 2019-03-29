@@ -4,8 +4,8 @@ exports[`HeaderLink Component when nothing specified should render correctly 1`]
 <Link
   passHref={true}
 >
-  <styled.a>
+  <HeaderLinkstyles__StyledLink>
     Click Me
-  </styled.a>
+  </HeaderLinkstyles__StyledLink>
 </Link>
 `;
