@@ -26,12 +26,12 @@ export const StyledClose = styled.button`
 
 export const StyledInput = styled.input`
   ${typography.input}
-  
+
   border: 0;
   outline: none;
   margin-left: ${spacing.medium};
   text-align: left;
-  width: 100%;
+  width: 99%;
 
   &:focus + label {
     color: ${colorVariables.inputPrefixFocus};
