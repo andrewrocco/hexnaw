@@ -13,7 +13,7 @@
   "jest": {
     "setupFiles": [
       "jest-plugin-context/setup",
-      "./jestSetup.js"
+      "./jest.setup.js"
     ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
