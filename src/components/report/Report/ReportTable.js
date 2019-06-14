@@ -27,7 +27,7 @@ export const ReportTable = ({ result }) => {
     <StyledTable aria-live="assertive">
       <thead>
         <tr>
-          <th colSpan={3} className="result-table-header hex-value">{hex}</th>
+          <th className="result-table-header hex-value">{hex}</th>
           <th className="result-table-header">
             <span className="mobile-label">C</span>
             <span className="desktop-label">Contrast Ratio</span>
@@ -50,11 +50,11 @@ export const ReportTable = ({ result }) => {
             // eslint-disable-next-line react/no-array-index-key
             <tr key={`${hexValue}-${i}`}>
               <td className="result-table-data hex-value">{hexValue}</td>
-              <td>{contrast}</td>
-              <td>
+              <td className="result-table-data">{contrast}</td>
+              <td className="result-table-data">
                 {getScore(accessibility.aaLarge, accessibility.aaaLarge)}
               </td>
-              <td>
+              <td className="result-table-data">
                 {getScore(accessibility.aa, accessibility.aaa)}
               </td>
             </tr>
