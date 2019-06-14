@@ -7,7 +7,7 @@ import { ReportTable } from './ReportTable';
 
 export const Report = ({ colorResults }) => (
   <div>
-    <ReportToolbar />
+    {colorResults.length >= 1 && <ReportToolbar />}
     <Box m={4}>
       {colorResults.map((result, i) => (
         // eslint-disable-next-line react/no-array-index-key

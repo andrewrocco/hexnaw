@@ -2,7 +2,8 @@ import React, { Component, Fragment } from 'react';
 import { ThemeProvider } from 'styled-components';
 
 import { ColorForm, Report } from 'components/report';
-import { AppHead, Hero } from 'components/layout';
+import { AppHead, Footer, Hero } from 'components/layout';
+// import { TwitterShare } from 'components/social';
 import { Header } from 'ui/navigation';
 import { theme } from 'ui/base';
 
@@ -33,6 +34,7 @@ class Index extends Component {
           {(
             <Report colorResults={colorResults} />
           )}
+          <Footer />
           {/* <pre>{JSON.stringify(colorResults, null, 2)}</pre> */}
         </Fragment>
       </ThemeProvider>
