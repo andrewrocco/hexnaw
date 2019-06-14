@@ -18,6 +18,8 @@ const getScore = (aaTest, aaaTest) => {
   return resultString;
 };
 
+const isBordered = color => (color === '#FFF' || color === '#FFFFFF') && 'bordered';
+
 export const ReportTable = ({ result }) => {
   const { hex, combinations } = result;
 
@@ -44,12 +46,14 @@ export const ReportTable = ({ result }) => {
       </thead>
       <tbody>
         {combinations.map((combo, i) => {
-          const { accessibility, contrast, hex: hexValue } = combo;
+          const { accessibility, contrast, hex: comboHex } = combo;
 
           return (
             // eslint-disable-next-line react/no-array-index-key
-            <tr key={`${hexValue}-${i}`}>
-              <td className="result-table-data hex-value">{hexValue}</td>
+            <tr key={`${comboHex}-${i}`}>
+              <td className={`table-data-color ${isBordered(hex)}`} style={{ backgroundColor: hex }} />
+              <td className={`table-data-color ${isBordered(comboHex)}`} style={{ backgroundColor: comboHex }} />
+              <td className="result-table-data hex-value">{comboHex}</td>
               <td className="result-table-data">{contrast}</td>
               <td className="result-table-data">
                 {getScore(accessibility.aaLarge, accessibility.aaaLarge)}

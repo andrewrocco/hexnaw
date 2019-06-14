@@ -119,6 +119,15 @@ export const StyledTable = styled.table`
     }
   }
 
+  .table-data-color {
+    width: 7px;
+    @media only screen and (min-width: 650px) { width: 40px; }
+
+    &.bordered {
+      box-shadow: inset 0px 0px 0px 1px #e4e4e4;
+    }
+  }
+
   .result-table-data {
     border-bottom: 1px solid #e4e4e4;
     font-size: 13px;
