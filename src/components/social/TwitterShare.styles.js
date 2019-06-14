@@ -9,6 +9,7 @@ export const StyledLink = styled.a`
   letter-spacing: 2px;
   padding: 23px 0;
   position: relative;
+  text-decoration: none;
   text-transform: uppercase;
   width: 100%;
   z-index: 1;
