@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Box, Flex } from '@rebass/grid';
-import { breakpoints, colors, typography } from 'ui/base';
+import { breakpoints, colors, fonts, typography, widths } from 'ui/base';
 
 export const ToolbarWrap = styled(Box)`
   ${breakpoints.medium.min} {
@@ -80,7 +80,12 @@ export const ToolbarAsideInner = styled(Flex)`
   max-width: 1000px;
 `;
 
+export const StyledTableBox = styled(Box)`
+  max-width: ${widths.maxWidthMd};
+`;
+
 export const StyledTable = styled.table`
+  ${fonts.primaryMedium};
   border-collapse: separate;
   border-spacing: 0;
   border-top-style: solid;
