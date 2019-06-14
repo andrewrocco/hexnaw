@@ -20,6 +20,9 @@ const getScore = (aaTest, aaaTest) => {
 
 const isBordered = color => (color === '#FFF' || color === '#FFFFFF') && 'bordered';
 
+// eslint-disable-next-line prefer-template
+const roundNumber = (value, decimals) => Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
+
 export const ReportTable = ({ result }) => {
   const { hex, combinations } = result;
 
@@ -29,7 +32,7 @@ export const ReportTable = ({ result }) => {
     <StyledTable aria-live="assertive">
       <thead>
         <tr>
-          <th className="result-table-header hex-value">{hex}</th>
+          <th colSpan={3} className="result-table-header hex-value">{hex}</th>
           <th className="result-table-header">
             <span className="mobile-label">C</span>
             <span className="desktop-label">Contrast Ratio</span>
@@ -54,7 +57,7 @@ export const ReportTable = ({ result }) => {
               <td className={`table-data-color ${isBordered(hex)}`} style={{ backgroundColor: hex }} />
               <td className={`table-data-color ${isBordered(comboHex)}`} style={{ backgroundColor: comboHex }} />
               <td className="result-table-data hex-value">{comboHex}</td>
-              <td className="result-table-data">{contrast}</td>
+              <td className="result-table-data">{roundNumber(contrast, 2)}</td>
               <td className="result-table-data">
                 {getScore(accessibility.aaLarge, accessibility.aaaLarge)}
               </td>
