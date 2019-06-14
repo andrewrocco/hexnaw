@@ -3,7 +3,6 @@ import { ThemeProvider } from 'styled-components';
 
 import { ColorForm, Report } from 'components/report';
 import { AppHead, Footer, Hero } from 'components/layout';
-// import { TwitterShare } from 'components/social';
 import { Header } from 'ui/navigation';
 import { theme } from 'ui/base';
 
