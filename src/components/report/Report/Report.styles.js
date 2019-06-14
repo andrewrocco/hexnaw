@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Box, Flex } from '@rebass/grid';
-import { breakpoints, colors, fonts, typography, widths } from 'ui/base';
+import { breakpoints, colors, colorVariables, fonts, typography, widths } from 'ui/base';
 
 export const ToolbarWrap = styled(Box)`
   ${breakpoints.medium.min} {
@@ -145,6 +145,14 @@ export const StyledTable = styled.table`
       padding: 15px 0 15px 15px;
       @media only screen and (min-width: 650px) { padding: 30px; }
       text-align: left;
+    }
+
+    .passing {
+      color: ${colorVariables.typeAccent};
+    }
+
+    .failing {
+      color: ${colorVariables.typeError};
     }
   }
 

@@ -4,18 +4,18 @@ import PropTypes from 'prop-types';
 import { StyledTable, StyledTableBox } from './Report.styles';
 
 const getScore = (aaTest, aaaTest) => {
-  let resultString = '';
+  let resultNode = null;
 
   // if only lower score passes
-  if (aaTest && !aaaTest) resultString = 'AA';
+  if (aaTest && !aaaTest) resultNode = <span className="passing">AA</span>;
 
   // if both pass
-  if (aaTest && aaaTest) resultString = 'AAA';
+  if (aaTest && aaaTest) resultNode = <span className="passing">AAA</span>;
 
   // if neither pass (lower scores are enough)
-  if (!aaTest || !aaaTest) resultString = 'NAW';
+  if (!aaTest || !aaaTest) resultNode = <span className="failing">Naw</span>;
 
-  return resultString;
+  return resultNode;
 };
 
 const isBordered = color => (color === '#FFF' || color === '#FFFFFF') && 'bordered';
