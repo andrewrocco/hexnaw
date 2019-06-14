@@ -45,4 +45,34 @@ export const Footer = styled.div`
       color: #fff;
     }
   }
+
+  .copyright {
+    border-top: 1px solid #2f302f;
+    color: #999999;
+    font-size: 10px;
+    letter-spacing: 2px;
+    padding: 44px;
+    text-transform: uppercase;
+
+    .footer-scenery-link {
+      display: inline-block;
+    }
+
+    .scenery-logo {
+      height: 20px;
+      margin: 0 35px;
+      width: 30px;
+
+      path {
+        fill: #999999;
+      }
+    }
+
+    span {
+      display: block;
+      @media only screen and (min-width: 650px) { display: inline-block; }
+      margin: 20px 0;
+      @media only screen and (min-width: 650px) { margin: 0; }
+    }
+  }
 `;
