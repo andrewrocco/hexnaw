@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable max-len */
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
@@ -33,11 +34,11 @@ const About = () => (
               <Paragraph size={['small']}>
                 The font? Gotham.
                 <br />
-                The stack? Node/Express.
+                The stack? <a href="https://nextjs.org/">Next.js</a>.
                 <br />
-                The host? Now.
+                The host? <a href="https://zeit.co/now">Now</a>.
               </Paragraph>
-              <Paragraph size={['small']}>Thanks to Brent Jackson for Colorable, which make up the guts of this application.</Paragraph>
+              <Paragraph size={['small']}>Thanks to <a href="https://twitter.com/jxnblk">Brent Jackson</a> for <a href="http://jxnblk.com/colorable/">Colorable</a>, which make up the guts of this application.</Paragraph>
             </Box>
           </Flex>
         </Box>
