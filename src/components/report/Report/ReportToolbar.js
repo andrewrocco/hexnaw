@@ -54,8 +54,10 @@ export class ReportToolbar extends React.Component {
             </Styled.ToolbarNumber>
           </Styled.ToolbarSection>
           <Styled.ToolbarSection {...toolbarSectionProps} px={4}>
-            <Text>Show only passing colors</Text>
-            <Toggle onClick={togglePassingColors} />
+            <Toggle
+              label="Show only passing colors"
+              onClick={togglePassingColors}
+            />
           </Styled.ToolbarSection>
           <Styled.ToolbarSection {...toolbarSectionProps} px={0} py={0}>
             <Styled.ToolbarHelpButton onClick={this.toggleHelpWindow}>
