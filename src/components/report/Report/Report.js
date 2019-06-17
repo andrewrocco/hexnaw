@@ -28,8 +28,6 @@ export class Report extends PureComponent {
         } else {
           yeahCount += 1;
         }
-
-        console.log(combo);
       })
     ));
 

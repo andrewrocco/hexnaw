@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Box, Flex } from '@rebass/grid';
+import { Box } from '@rebass/grid';
 
 import { Heading, Text } from 'ui/typography';
 import { Toggle } from 'components/form';
