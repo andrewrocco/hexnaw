@@ -23,7 +23,7 @@ export class Report extends PureComponent {
 
     colorResults.forEach(result => (
       result.combinations.forEach((combo) => {
-        if (!combo.accessibility.aa || !combo.accessibility.aaLarge || !combo.accessibility.aaa || combo.accessibility.aaaLarge) {
+        if (!combo.accessibility.aa || !combo.accessibility.aaLarge || !combo.accessibility.aaa || !combo.accessibility.aaaLarge) {
           nawCount += 1;
         } else {
           yeahCount += 1;
