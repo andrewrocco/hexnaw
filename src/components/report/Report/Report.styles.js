@@ -159,4 +159,13 @@ export const StyledTable = styled.table`
   tr:first-child .result-table-data {
     border-top: 1px solid #e4e4e4;
   }
+
+  // Show Hide Animations
+  .result-row {
+    transition: 0.5s;
+
+    &.failing-row {
+      opacity: 0.15;
+    }
+  }
 `;

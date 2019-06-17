@@ -18,12 +18,15 @@ const getScore = (aaTest, aaaTest) => {
   return resultNode;
 };
 
+// to determine if any of the accessibility tests are failing
+const isFailing = resultItem => !resultItem.aa || !resultItem.aaLarge || !resultItem.aaa || !resultItem.aaaLarge;
+
 const isBordered = color => (color === '#FFF' || color === '#FFFFFF') && 'bordered';
 
 // eslint-disable-next-line prefer-template
 const roundNumber = (value, decimals) => Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
 
-export const ReportTable = ({ result }) => {
+export const ReportTable = ({ result, isShowingPassing }) => {
   const { hex, combinations } = result;
 
   return (
@@ -49,10 +52,11 @@ export const ReportTable = ({ result }) => {
         <tbody>
           {combinations.map((combo, i) => {
             const { accessibility, contrast, hex: comboHex } = combo;
+            const hiddenClass = (isShowingPassing && isFailing(accessibility)) ? 'failing-row' : '';
 
             return (
               // eslint-disable-next-line react/no-array-index-key
-              <tr key={`${comboHex}-${i}`}>
+              <tr key={`${comboHex}-${i}`} className={`result-row ${hiddenClass}`}>
                 <td className={`table-data-color ${isBordered(hex)}`} style={{ backgroundColor: hex }} />
                 <td className={`table-data-color ${isBordered(comboHex)}`} style={{ backgroundColor: comboHex }} />
                 <td className="result-table-data hex-value">{comboHex}</td>
@@ -64,7 +68,7 @@ export const ReportTable = ({ result }) => {
                   {getScore(accessibility.aa, accessibility.aaa)}
                 </td>
               </tr>
-            )
+            );
           })}
         </tbody>
       </StyledTable>
@@ -73,6 +77,7 @@ export const ReportTable = ({ result }) => {
 };
 
 ReportTable.propTypes = {
+  isShowingPassing: PropTypes.bool,
   result: PropTypes.shape({
     hex: PropTypes.string,
     combinations: PropTypes.array,

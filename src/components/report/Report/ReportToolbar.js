@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Box, Flex } from '@rebass/grid';
+import { Box } from '@rebass/grid';
 
 import { Heading, Text } from 'ui/typography';
+import { Toggle } from 'components/form';
 import { colors } from 'ui/base';
 
 import * as Styled from './Report.styles';
@@ -53,8 +54,11 @@ export class ReportToolbar extends React.Component {
             </Styled.ToolbarNumber>
           </Styled.ToolbarSection>
           <Styled.ToolbarSection {...toolbarSectionProps} px={4}>
-            <Text>Show only passing colors</Text>
-            <button type="button" onClick={togglePassingColors}>Toggle</button>
+            <Toggle
+              active={isShowingPassing}
+              label="Only highlight passing colors"
+              onChange={togglePassingColors}
+            />
           </Styled.ToolbarSection>
           <Styled.ToolbarSection {...toolbarSectionProps} px={0} py={0}>
             <Styled.ToolbarHelpButton onClick={this.toggleHelpWindow}>
@@ -85,14 +89,14 @@ export class ReportToolbar extends React.Component {
   }
 }
 
-ReportToolbar.defaultProps = {
-  nawCount: 0,
-  yeahCount: 0,
-};
-
 ReportToolbar.propTypes = {
   isShowingPassing: PropTypes.bool,
   nawCount: PropTypes.number,
   togglePassingColors: PropTypes.func,
   yeahCount: PropTypes.number,
+};
+
+ReportToolbar.defaultProps = {
+  nawCount: 0,
+  yeahCount: 0,
 };
