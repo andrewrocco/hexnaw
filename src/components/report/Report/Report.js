@@ -17,7 +17,8 @@ export class Report extends PureComponent {
   }
 
   handleToggle() {
-    console.log('clicked');
+    const { showPassingOnly } = this.state;
+    this.setState({ showPassingOnly: !showPassingOnly });
   }
 
   render() {
@@ -34,8 +35,12 @@ export class Report extends PureComponent {
         )}
         <Box m={4}>
           {colorResults.map((result, i) => (
-            // eslint-disable-next-line react/no-array-index-key
-            <ReportTable key={`ResultTable-${i}`} result={result} />
+            <ReportTable
+              // eslint-disable-next-line react/no-array-index-key
+              key={`ResultTable-${i}`}
+              result={result}
+              isShowingPassing={showPassingOnly}
+            />
           ))}
         </Box>
       </div>
