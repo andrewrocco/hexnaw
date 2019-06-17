@@ -24,7 +24,7 @@ const About = () => (
         </Box>
         <Box py={6}>
           <Flex>
-            <Box width={[1, 1, 1 / 2]} mr={[0, 3]}>
+            <Box width={[1, 1, 1 / 2]} mr={[0, '10%']}>
               <Heading>Get In Touch</Heading>
               <Paragraph size={['small']}>Problems, feedback, requests? We&apos;d love to hear about your experience with Hex Naw and how we can make it even more useful.</Paragraph>
               <Paragraph size={['small']}><a href="mailto:hello@thescenery.co">Email the webmaster</a></Paragraph>
@@ -41,6 +41,12 @@ const About = () => (
               <Paragraph size={['small']}>Thanks to <a href="https://twitter.com/jxnblk">Brent Jackson</a> for <a href="http://jxnblk.com/colorable/">Colorable</a>, which make up the guts of this application.</Paragraph>
             </Box>
           </Flex>
+        </Box>
+      </Box>
+
+      <Box py={6} style={{ backgroundColor: '#000' }}>
+        <Box m="0 auto" px={[4, 5, 0]} style={{ maxWidth: '800px' }}>
+          <Heading size="medium" color="white">Release Notes</Heading>
         </Box>
       </Box>
     </>
