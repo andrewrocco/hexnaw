@@ -23,11 +23,21 @@ const About = () => (
         </Box>
         <Box py={6}>
           <Flex>
-            <Box width={[1, 1, 1 / 2]}>
+            <Box width={[1, 1, 1 / 2]} mr={[0, 3]}>
               <Heading>Get In Touch</Heading>
+              <Paragraph size={['small']}>Problems, feedback, requests? We&apos;d love to hear about your experience with Hex Naw and how we can make it even more useful.</Paragraph>
+              <Paragraph size={['small']}><a href="mailto:hello@thescenery.co">Email the webmaster</a></Paragraph>
             </Box>
             <Box width={[1, 1, 1 / 2]}>
               <Heading>Colophon</Heading>
+              <Paragraph size={['small']}>
+                The font? Gotham.
+                <br />
+                The stack? Node/Express.
+                <br />
+                The host? Now.
+              </Paragraph>
+              <Paragraph size={['small']}>Thanks to Brent Jackson for Colorable, which make up the guts of this application.</Paragraph>
             </Box>
           </Flex>
         </Box>
