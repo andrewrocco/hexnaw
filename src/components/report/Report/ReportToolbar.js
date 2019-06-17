@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Box, Flex } from '@rebass/grid';
 
 import { Heading, Text } from 'ui/typography';
+import { Toggle } from 'components/form';
 import { colors } from 'ui/base';
 
 import * as Styled from './Report.styles';
@@ -54,7 +55,7 @@ export class ReportToolbar extends React.Component {
           </Styled.ToolbarSection>
           <Styled.ToolbarSection {...toolbarSectionProps} px={4}>
             <Text>Show only passing colors</Text>
-            <button type="button" onClick={togglePassingColors}>Toggle</button>
+            <Toggle onClick={togglePassingColors} />
           </Styled.ToolbarSection>
           <Styled.ToolbarSection {...toolbarSectionProps} px={0} py={0}>
             <Styled.ToolbarHelpButton onClick={this.toggleHelpWindow}>
