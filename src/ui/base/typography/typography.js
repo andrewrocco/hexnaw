@@ -26,7 +26,7 @@ const typography = {
   headingLarge: css`
     ${fonts.primaryBold}
     font-size: 30px;
-    line-height: 1.2;
+    line-height: 1.4;
   `,
   headingMedium: css`
     ${fonts.primaryBold}
