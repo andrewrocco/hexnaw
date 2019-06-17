@@ -55,6 +55,7 @@ export class ReportToolbar extends React.Component {
           </Styled.ToolbarSection>
           <Styled.ToolbarSection {...toolbarSectionProps} px={4}>
             <Toggle
+              active={isShowingPassing}
               label="Show only passing colors"
               onClick={togglePassingColors}
             />
@@ -88,14 +89,14 @@ export class ReportToolbar extends React.Component {
   }
 }
 
-ReportToolbar.defaultProps = {
-  nawCount: 0,
-  yeahCount: 0,
-};
-
 ReportToolbar.propTypes = {
   isShowingPassing: PropTypes.bool,
   nawCount: PropTypes.number,
   togglePassingColors: PropTypes.func,
   yeahCount: PropTypes.number,
+};
+
+ReportToolbar.defaultProps = {
+  nawCount: 0,
+  yeahCount: 0,
 };

@@ -26,7 +26,3 @@ Toggle.propTypes = {
   label: PropTypes.string.isRequired,
   onClick: PropTypes.func,
 };
-
-Toggle.defaultProps = {
-  active: true,
-};
