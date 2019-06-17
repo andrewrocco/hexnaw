@@ -16,6 +16,26 @@ export class Report extends PureComponent {
     this.handleToggle = this.handleToggle.bind(this);
   }
 
+  getResultMeta() {
+    const { colorResults } = this.props;
+    let yeahCount = 0;
+    let nawCount = 0;
+
+    colorResults.forEach(result => (
+      result.combinations.forEach((combo) => {
+        if (!combo.accessibility.aa || !combo.accessibility.aaLarge || !combo.accessibility.aaa || combo.accessibility.aaaLarge) {
+          nawCount += 1;
+        } else {
+          yeahCount += 1;
+        }
+
+        console.log(combo);
+      })
+    ));
+
+    return { yeahCount, nawCount };
+  }
+
   handleToggle() {
     const { showPassingOnly } = this.state;
     this.setState({ showPassingOnly: !showPassingOnly });
@@ -24,6 +44,7 @@ export class Report extends PureComponent {
   render() {
     const { colorResults } = this.props;
     const { showPassingOnly } = this.state;
+    const { yeahCount, nawCount } = this.getResultMeta();
 
     return (
       <div>
@@ -31,6 +52,8 @@ export class Report extends PureComponent {
           <ReportToolbar
             togglePassingColors={this.handleToggle}
             isShowingPassing={showPassingOnly}
+            yeahCount={yeahCount}
+            nawCount={nawCount}
           />
         )}
         <Box m={4}>
