@@ -20,7 +20,7 @@ const getResultCounts = (colorResults) => {
   ));
 
   return { yeahCount, nawCount };
-}
+};
 
 export const Report = (props) => {
   const [showPassingOnly, setShowPassingOnly] = useState(false);
