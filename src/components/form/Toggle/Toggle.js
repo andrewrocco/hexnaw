@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { Text } from 'ui/typography';
 import { ToggleContainer } from './Toggle.styles';
 
-export const Toggle = ({ active, label, onClick }) => (
+export const Toggle = ({ active, label, onChange }) => (
   <ToggleContainer>
     <Text aria-hidden="true">{label}</Text>
     <input
@@ -14,7 +14,7 @@ export const Toggle = ({ active, label, onClick }) => (
       checked={active}
       id="color-toggle"
       name="color-toggle"
-      onClick={onClick}
+      onChange={onChange}
       type="checkbox"
     />
     <label aria-label={label} htmlFor="color-toggle" />
@@ -24,5 +24,5 @@ export const Toggle = ({ active, label, onClick }) => (
 Toggle.propTypes = {
   active: PropTypes.bool,
   label: PropTypes.string.isRequired,
-  onClick: PropTypes.func,
+  onChange: PropTypes.func,
 };
