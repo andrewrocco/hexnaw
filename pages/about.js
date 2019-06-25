@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import { Box, Flex } from '@rebass/grid';
 
 import { theme } from 'ui/base';
-import { AppHead } from 'components/layout';
+import { AppHead, Footer } from 'components/layout';
 import { Header } from 'ui/navigation';
 import { Heading, Paragraph, Text } from 'ui/typography';
 
@@ -45,10 +45,70 @@ const About = () => (
       </Box>
 
       <Box py={6} style={{ backgroundColor: '#000' }}>
-        <Box m="0 auto" px={[4, 5, 0]} style={{ maxWidth: '800px' }}>
-          <Heading size="medium" color="white">Release Notes</Heading>
+        <Box m="0 auto" style={{ maxWidth: '800px' }}>
+          <Box px={[4, 5, 0]} style={{ textAlign: 'center' }} mb={5}>
+            <Heading size="medium" color="white">Release Notes</Heading>
+          </Box>
+          <Flex mb={5}>
+            <Box width={[1, 1 / 4]}>
+              <Text color="white">1.0.3</Text>
+              <br />
+              <Text color="gray70" size={['2xsmall']}>3/27/17</Text>
+            </Box>
+            <Box width={[1, 3 / 4]}>
+              <Paragraph color="white" size={['small']}>Pasting can be a harsh mistress.
+                <ul>
+                  <li>Paste a hex value into a field and now it just removes the hash instead of the last character. (Thanks, <a href="https://twitter.com/zaccolley" title="Zac Colley's Twitter account">Zac</a>)!</li>
+                </ul>
+              </Paragraph>
+            </Box>
+          </Flex>
+
+          <Flex mb={5}>
+            <Box width={[1, 1 / 4]}>
+              <Text color="white">1.0.2</Text>
+              <br />
+              <Text color="gray70" size={['2xsmall']}>10/24/16</Text>
+            </Box>
+            <Box width={[1, 3 / 4]}>
+              <Paragraph color="white" size={['small']}>Sure, you can clear all the fields at once, but that felt a bit overkill. Now you can clear individual fields for fun and profit!
+                <ul>
+                  <li>You can now delete individual fields if there are more than two.</li>
+                </ul>
+              </Paragraph>
+            </Box>
+          </Flex>
+
+          <Flex mb={5}>
+            <Box width={[1, 1 / 4]}>
+              <Text color="white">1.0.1</Text>
+              <br />
+              <Text color="gray70" size={['2xsmall']}>10/18/16</Text>
+            </Box>
+            <Box width={[1, 3 / 4]}>
+              <Paragraph color="white" size={['small']}>What&apos;s an initial release without an immediate bug fix?
+                <ul>
+                  <li>Pasting a hex value containing a hash no longer cuts off the last character. (Thanks, <a href="https://twitter.com/weisjohn" title="John Weis's Twitter account">John Weis</a>)!</li>
+                  <li>OG image points to the correct domain</li>
+                </ul>
+              </Paragraph>
+            </Box>
+          </Flex>
+
+          <Flex mb={5}>
+            <Box width={[1, 1 / 4]}>
+              <Text color="white">1.0.0</Text>
+              <br />
+              <Text color="gray70" size={['2xsmall']}>10/17/16</Text>
+            </Box>
+            <Box width={[1, 3 / 4]}>
+              <Paragraph color="white" size={['small']}>Hello! This is our initial release. We wanted to make sure that the basic functionality was fast, responsive and helpful. More features will be added as soon as we can get them out the door. For now, we hope you enjoy Hex Naw 1.0!</Paragraph>
+            </Box>
+          </Flex>
         </Box>
       </Box>
+
+      <Footer />
     </>
   </ThemeProvider>
 );
