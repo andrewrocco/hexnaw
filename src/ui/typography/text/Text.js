@@ -1,14 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
 import { breakpoints, colors, typography } from 'ui/base';
 
 const sizes = {
-  xsmall: typography.copyXSmall,
-  small: typography.copySmall,
-  medium: typography.copyMedium,
-  large: typography.copyLarge,
+  '2xsmall': typography.copy2XSmall,
+  'xsmall': typography.copyXSmall,
+  'small': typography.copySmall,
+  'medium': typography.copyMedium,
+  'large': typography.copyLarge,
 };
 
 const getSizes = ({ size = [] }) => css`

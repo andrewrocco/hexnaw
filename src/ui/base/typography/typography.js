@@ -3,6 +3,11 @@ import { css } from 'styled-components';
 import fonts from './fonts';
 
 const typography = {
+  copy2XSmall: css`
+    ${fonts.primaryMedium}
+    font-size: 10px;
+    line-height: 1.3;
+  `,
   copyXSmall: css`
     ${fonts.primaryMedium}
     font-size: 12px;
@@ -26,7 +31,7 @@ const typography = {
   headingLarge: css`
     ${fonts.primaryBold}
     font-size: 30px;
-    line-height: 1.2;
+    line-height: 1.4;
   `,
   headingMedium: css`
     ${fonts.primaryBold}
