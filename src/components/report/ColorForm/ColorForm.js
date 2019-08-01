@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Formik, Form, Field } from 'formik';
 import { Box, Flex } from '@rebass/grid';
 
-import { testColors } from 'utils';
+import { generateURLParams, testColors } from 'utils';
 import { Heading } from 'ui/typography';
 import { Button, Input } from 'ui/inputs';
 import { Icon } from 'ui/icons';
@@ -114,6 +114,7 @@ export class ColorForm extends Component {
 
     actions.setSubmitting(false);
     onSubmit(testColors(values));
+    onSubmit(generateURLParams(values));
   }
 
   render() {
