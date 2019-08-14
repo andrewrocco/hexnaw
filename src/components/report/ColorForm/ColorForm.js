@@ -10,6 +10,7 @@ import { Icon } from 'ui/icons';
 
 import * as Styled from './ColorForm.styles';
 
+// TODO: Find a way to generate a value from a URL param OR fall back to an empty string
 const getInitialValues = (num) => {
   const initial = {};
   for (let i = 0; i < num; i += 1) {
@@ -19,6 +20,7 @@ const getInitialValues = (num) => {
   return initial;
 };
 
+// * This is preventing more than 2 inputs from being generated on load (when more than 2 initial values exist)
 const getInitialInputNames = inputValues => Object
   .keys(inputValues)
   .slice(0, 2);
@@ -35,6 +37,7 @@ export class ColorForm extends Component {
       colorCount: 0,
       colorResults: {},
       hexInputNames: getInitialInputNames(this.initialValues),
+      // TODO: Need to automatically validate if at least 2 URL params are present
       isAddButtonDisabled: true,
       isSubmitButtonDisabled: true,
     };
