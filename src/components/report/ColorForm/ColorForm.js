@@ -13,7 +13,8 @@ import * as Styled from './ColorForm.styles';
 const getInitialValues = (num) => {
   const initial = {};
   for (let i = 0; i < num; i += 1) {
-    initial[`hex${i}`] = '';
+    const hexInputName = `hex${i}`;
+    initial[hexInputName] = '';
   }
   return initial;
 };
