@@ -17,3 +17,34 @@ export const generateURLParams = (colors) => {
 
   window.history.replaceState({}, '', `?${params.toString()}`);
 };
+
+
+const convertParamEntriesToObject = (paramEntries) => {
+  const results = {};
+
+  paramEntries.forEach((colorValue, hexInputName) => {
+    results[hexInputName] = colorValue;
+  });
+
+  return results;
+};
+
+export const hasURLParam = (key) => {
+  const url = new URL(window.location.href);
+  // Start reading params after the query string (the first item in the string)
+  const params = new URLSearchParams(url.search.slice(1));
+
+  return !!params.has(key);
+};
+
+
+/**
+ *
+ */
+export const getURLParam = (key) => {
+  const url = new URL(window.location.href);
+  // Start reading params after the query string (the first item in the string)
+  const params = new URLSearchParams(url.search.slice(1));
+
+  return params.get(key);
+};
