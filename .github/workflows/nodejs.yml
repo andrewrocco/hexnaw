@@ -1,7 +1,7 @@
 name: Node CI
 
 on: 
-  push:
+  pull_request:
     branches:
     - master
 
@@ -22,5 +22,5 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: npm install, build, and test
       run: |
-        npm install
-        npm test
+        yarn
+        yarn test
