@@ -3,14 +3,13 @@ import PropTypes from 'prop-types';
 import { Formik, Form, Field } from 'formik';
 import { Box, Flex } from '@rebass/grid';
 
-import { generateURLParams, testColors } from 'utils';
+import { generateURLHexParams, cleanColors, testColors } from 'utils';
 import { Heading } from 'ui/typography';
 import { Button, Input } from 'ui/inputs';
 import { Icon } from 'ui/icons';
 
 import * as Styled from './ColorForm.styles';
 
-// TODO: Find a way to generate a value from a URL param OR fall back to an empty string
 const getInitialValues = (num) => {
   const initial = {};
   for (let i = 0; i < num; i += 1) {
@@ -20,7 +19,6 @@ const getInitialValues = (num) => {
   return initial;
 };
 
-// * This is preventing more than 2 inputs from being generated on load (when more than 2 initial values exist)
 const getInitialInputNames = inputValues => Object
   .keys(inputValues)
   .slice(0, 2);
@@ -37,7 +35,6 @@ export class ColorForm extends Component {
       colorCount: 0,
       colorResults: {},
       hexInputNames: getInitialInputNames(this.initialValues),
-      // TODO: Need to automatically validate if at least 2 URL params are present
       isAddButtonDisabled: true,
       isSubmitButtonDisabled: true,
     };
@@ -115,10 +112,10 @@ export class ColorForm extends Component {
 
   handleSubmit(values, actions) {
     const { onSubmit } = this.props;
+    const cleanedColors = cleanColors(values);
 
     actions.setSubmitting(false);
-    onSubmit(testColors(values));
-    onSubmit(generateURLParams(values));
+    onSubmit(testColors(cleanedColors), generateURLHexParams(cleanedColors));
   }
 
   render() {

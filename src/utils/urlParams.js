@@ -1,50 +1,27 @@
 /**
- * Generates URL parameters based on the tested colors and updates the address
- * bar URL with these params, ultimately making real reports shareable,
+ * Generates a hyphen separated hex value URL parameter based on the tested colors and updates
+ * the address bar with this parameter, ultimately making report results shareable.
  *
  * @param {Object} colors the colors tested for the current report
  */
-export const generateURLParams = (colors) => {
-  // Always work with the origin URL since we want to replace the entire URL each time params are generated
-  const url = new URL(window.location.origin);
-  const params = new URLSearchParams(url);
-
-  Object.keys(colors).forEach((color) => {
-    if (colors[color]) {
-      params.append(color, colors[color]);
-    }
-  });
-
-  window.history.replaceState({}, '', `?${params.toString()}`);
+export const generateURLHexParams = (colors) => {
+  const hexParamString = Object.values(colors).join('-').replace(/#/g, '');
+  window.history.replaceState({}, '', `?${hexParamString}`);
 };
-
-
-const convertParamEntriesToObject = (paramEntries) => {
-  const results = {};
-
-  paramEntries.forEach((colorValue, hexInputName) => {
-    results[hexInputName] = colorValue;
-  });
-
-  return results;
-};
-
-export const hasURLParam = (key) => {
-  const url = new URL(window.location.href);
-  // Start reading params after the query string (the first item in the string)
-  const params = new URLSearchParams(url.search.slice(1));
-
-  return !!params.has(key);
-};
-
 
 /**
+ * Get the hex values string from the URL parameter
  *
+ * @returns {array} an array of hex values derived from URL parameters
  */
-export const getURLParam = (key) => {
+export const getHexValuesFromURLParams = () => {
   const url = new URL(window.location.href);
-  // Start reading params after the query string (the first item in the string)
-  const params = new URLSearchParams(url.search.slice(1));
 
-  return params.get(key);
+  // Start reading params after the query string (the first item in the string)
+  const hexString = url.search.slice(1);
+
+  // Build an array from the hex string
+  const hexValues = hexString.split('-');
+
+  return hexValues;
 };
