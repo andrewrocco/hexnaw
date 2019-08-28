@@ -5,7 +5,7 @@
  * @param {Object} colors the colors tested for the current report
  */
 export const generateURLHexParams = (colors) => {
-  const hexParamString = Object.values(colors).join('-').replace(/#/g, '');
+  const hexParamString = Object.values(colors).join('&').replace(/#/g, '');
   window.history.replaceState({}, '', `?${hexParamString}`);
 };
 
@@ -21,7 +21,7 @@ export const getHexValuesFromURLParams = () => {
   const hexString = url.search.slice(1);
 
   // Build an array from the hex string
-  const hexValues = hexString.split('-');
+  const hexValues = hexString.split('&');
 
   return hexValues;
 };
