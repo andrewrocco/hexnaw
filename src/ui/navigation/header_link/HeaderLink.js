@@ -4,14 +4,17 @@ import Link from 'next/link';
 
 import { StyledLink } from './HeaderLink.styles';
 
-export const HeaderLink = ({ children, href, prefetch }) => (
-  <Link href={href} prefetch={prefetch} passHref>
-    <StyledLink>{children}</StyledLink>
-  </Link>
+export const HeaderLink = ({ children, href, isBasic, prefetch }) => (
+  !isBasic ? (
+    <Link href={href} prefetch={prefetch} passHref>
+      <StyledLink>{children}</StyledLink>
+    </Link>
+  ) : <StyledLink href={href}>{children}</StyledLink>
 );
 
 HeaderLink.propTypes = {
   children: PropTypes.node,
   href: PropTypes.string,
+  isBasic: PropTypes.bool,
   prefetch: PropTypes.bool,
 };
