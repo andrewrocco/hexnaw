@@ -34,7 +34,7 @@ class Index extends Component {
             <Report colorResults={colorResults} />
           )}
           <Footer />
-          {/* <pre>{JSON.stringify(colorResults, null, 2)}</pre> */}
+          <pre>{JSON.stringify(colorResults, null, 2)}</pre>
         </Fragment>
       </ThemeProvider>
     );
