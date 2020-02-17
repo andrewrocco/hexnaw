@@ -12,7 +12,7 @@ const Hex = () => {
   const router = useRouter();
   const { hex } = router.query;
 
-  function validateAndTest(values) {
+  const validateAndTest = (values) => {
     if (!values) return;
 
     // validate incoming values
@@ -24,7 +24,7 @@ const Hex = () => {
 
     // eslint-disable-next-line consistent-return
     return results;
-  }
+  };
 
   return (
     <>
