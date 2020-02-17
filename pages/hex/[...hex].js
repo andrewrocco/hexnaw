@@ -16,8 +16,8 @@ const Hex = () => {
     if (!values) return;
 
     // validate incoming values
-    const validHexValues = values.filter(hexID => (
-      (/^[a-fA-F0-9]{6}$|^[a-fA-F0-9]{3}$/).test(hexID)
+    const validHexValues = values.filter(value => (
+      (/^[a-fA-F0-9]{6}$|^[a-fA-F0-9]{3}$/).test(value)
     ));
 
     const results = testColors({ ...validHexValues });
