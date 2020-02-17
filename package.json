@@ -7,7 +7,6 @@
     "build": "NODE_PATH=src next build",
     "start": "NODE_PATH=src next start",
     "test": "NODE_ENV=test NODE_PATH=src jest",
-    "test:updatesnapshots": "NODE_ENV=test NODE_PATH=src jest --updateSnapshot",
     "test:watch": "NODE_ENV=test NODE_PATH=src jest --watch",
     "test:coverage": "NODE_ENV=test NODE_PATH=src jest --coverage"
   },
