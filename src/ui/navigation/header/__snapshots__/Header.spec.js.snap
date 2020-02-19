@@ -26,7 +26,6 @@ exports[`Header Component when nothing specified should render correctly 1`] = `
       </HeaderLink>
       <HeaderLink
         href="https://thescenery.co"
-        isExternal={true}
       >
         The Scenery →
       </HeaderLink>
