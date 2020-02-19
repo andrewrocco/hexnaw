@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { StyledLink } from './HeaderLink.styles';
 
 export const HeaderLink = ({ children, href, prefetch }) => {
+  // is this link internal or external?
+  // if external, don't use the next/link component
   const isLinkInternal = loc => /^\/(?!\/)/.test(loc);
 
   return (
