@@ -4,17 +4,20 @@ import Link from 'next/link';
 
 import { StyledLink } from './HeaderLink.styles';
 
-export const HeaderLink = ({ children, href, isExternal, prefetch }) => (
-  !isExternal ? (
-    <Link href={href} prefetch={prefetch} passHref>
-      <StyledLink>{children}</StyledLink>
-    </Link>
-  ) : <StyledLink href={href}>{children}</StyledLink>
-);
+export const HeaderLink = ({ children, href, prefetch }) => {
+  const isLinkInternal = loc => /^\/(?!\/)/.test(loc);
+
+  return (
+    isLinkInternal(href) ? (
+      <Link href={href} prefetch={prefetch} passHref>
+        <StyledLink>{children}</StyledLink>
+      </Link>
+    ) : <StyledLink href={href}>{children}</StyledLink>
+  );
+};
 
 HeaderLink.propTypes = {
   children: PropTypes.node,
   href: PropTypes.string,
-  isExternal: PropTypes.bool,
   prefetch: PropTypes.bool,
 };
