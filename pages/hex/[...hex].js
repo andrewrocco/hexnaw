@@ -13,7 +13,7 @@ const Hex = () => {
   const { hex } = router.query;
 
   const validateAndTest = (values) => {
-    if (!values) return;
+    if (!values) return [];
 
     // validate incoming values
     const validHexValues = values.filter(value => (
@@ -22,7 +22,6 @@ const Hex = () => {
 
     const results = testColors({ ...validHexValues });
 
-    // eslint-disable-next-line consistent-return
     return results;
   };
 
