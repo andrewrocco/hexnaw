@@ -33,7 +33,7 @@ export class Header extends PureComponent {
         <Box>
           <StyledNav open={menuOpen}>
             <HeaderLink href="/">Hex Naw</HeaderLink>
-            <HeaderLink href="/about" prefetch>About</HeaderLink>
+            <HeaderLink href="/about">About</HeaderLink>
             <HeaderLink href="https://thescenery.co">The Scenery &rarr;</HeaderLink>
           </StyledNav>
           <StyledNavButton onClick={this.handleMenuToggle}>Click Me</StyledNavButton>

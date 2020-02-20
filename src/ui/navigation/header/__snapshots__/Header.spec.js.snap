@@ -21,7 +21,6 @@ exports[`Header Component when nothing specified should render correctly 1`] = `
       </HeaderLink>
       <HeaderLink
         href="/about"
-        prefetch={true}
       >
         About
       </HeaderLink>
