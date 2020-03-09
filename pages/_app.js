@@ -1,4 +1,4 @@
-import App, { Container } from 'next/app';
+import App from 'next/app';
 import React from 'react';
 import Head from 'next/head';
 import { createGlobalStyle } from 'styled-components';
@@ -29,7 +29,7 @@ class HexNaw extends App {
     const { Component, pageProps } = this.props;
 
     return (
-      <Container>
+      <>
         <GlobalStyle />
         <Head>
           <link rel="shortcut icon" type="image/ico" href="/static/favicon.ico" />
@@ -38,7 +38,7 @@ class HexNaw extends App {
           {this.props.styleTags}
         </Head>
         <Component {...pageProps} />
-      </Container>
+      </>
     );
   }
 }
