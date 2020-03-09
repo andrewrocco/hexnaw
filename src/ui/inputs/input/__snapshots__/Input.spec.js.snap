@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input when nothing specified should render correctly 1`] = `
+<Input
+  field={
+    Object {
+      "value": "fff",
+    }
+  }
+  onChange={[Function]}
+  onRemove={[MockFunction]}
+>
+  <styled.div
+    hexValue="#fff"
+  >
+    <div
+      className="sc-19402xi-3 dIarrY"
+    >
+      <styled.input
+        autoCapitalize="off"
+        autoComplete="off"
+        onChange={[Function]}
+        spellCheck="false"
+        type="text"
+        value="fff"
+      >
+        <input
+          autoCapitalize="off"
+          autoComplete="off"
+          className="sc-19402xi-1 dcgzjL"
+          onChange={[Function]}
+          spellCheck="false"
+          type="text"
+          value="fff"
+        />
+      </styled.input>
+      <styled.label>
+        <label
+          className="sc-19402xi-2 hSEqrQ"
+        >
+          #
+        </label>
+      </styled.label>
+      <styled.button
+        onClick={[MockFunction]}
+        type="button"
+      >
+        <button
+          className="sc-19402xi-0 eBjPIc"
+          onClick={[MockFunction]}
+          type="button"
+        >
+          <Icon
+            icon="Close"
+          >
+            <svg
+              viewBox="0 0 11 11"
+            >
+              <path
+                d="M5.5 3.732l2.616-2.616c.488-.488 1.28-.488 1.768 0s.488 1.28 0 1.768L7.268 5.5l2.616 2.616c.488.488.488 1.28 0 1.768s-1.28.488-1.768 0L5.5 7.268 2.884 9.884c-.488.488-1.28.488-1.768 0s-.488-1.28 0-1.768L3.732 5.5 1.116 2.884c-.488-.488-.488-1.28 0-1.768s1.28-.488 1.768 0L5.5 3.732z"
+              />
+            </svg>
+          </Icon>
+        </button>
+      </styled.button>
+    </div>
+  </styled.div>
+</Input>
+`;

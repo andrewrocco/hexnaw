@@ -12,6 +12,12 @@ describe('Input', () => {
     />
   );
 
+  context('when nothing specified', () => {
+    it('should render correctly', () => {
+      expect(subject).toMatchSnapshot();
+    });
+  });
+
   context('getValidHex helper', () => {
     it('returns valid hex value with # prefix', () => {
       expect(getValidHex('bbb')).toBe('#bbb');
