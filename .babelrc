@@ -6,8 +6,7 @@
     [
       "styled-components",
       {
-        "ssr": true,
-        "displayName": false
+        "ssr": true
       }
     ]
   ]

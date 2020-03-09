@@ -10,13 +10,13 @@ exports[`Input when nothing specified should render correctly 1`] = `
   onChange={[Function]}
   onRemove={[MockFunction]}
 >
-  <styled.div
+  <Inputstyles__StyledWrap
     hexValue="#fff"
   >
     <div
-      className="sc-19402xi-3 dIarrY"
+      className="Inputstyles__StyledWrap-sc-19402xi-3 iUEWRY"
     >
-      <styled.input
+      <Inputstyles__StyledInput
         autoCapitalize="off"
         autoComplete="off"
         onChange={[Function]}
@@ -27,26 +27,26 @@ exports[`Input when nothing specified should render correctly 1`] = `
         <input
           autoCapitalize="off"
           autoComplete="off"
-          className="sc-19402xi-1 dcgzjL"
+          className="Inputstyles__StyledInput-sc-19402xi-1 cysLUR"
           onChange={[Function]}
           spellCheck="false"
           type="text"
           value="fff"
         />
-      </styled.input>
-      <styled.label>
+      </Inputstyles__StyledInput>
+      <Inputstyles__StyledLabel>
         <label
-          className="sc-19402xi-2 hSEqrQ"
+          className="Inputstyles__StyledLabel-sc-19402xi-2 ivsVvG"
         >
           #
         </label>
-      </styled.label>
-      <styled.button
+      </Inputstyles__StyledLabel>
+      <Inputstyles__StyledClose
         onClick={[MockFunction]}
         type="button"
       >
         <button
-          className="sc-19402xi-0 eBjPIc"
+          className="Inputstyles__StyledClose-sc-19402xi-0 emYsUi"
           onClick={[MockFunction]}
           type="button"
         >
@@ -62,8 +62,8 @@ exports[`Input when nothing specified should render correctly 1`] = `
             </svg>
           </Icon>
         </button>
-      </styled.button>
+      </Inputstyles__StyledClose>
     </div>
-  </styled.div>
+  </Inputstyles__StyledWrap>
 </Input>
 `;

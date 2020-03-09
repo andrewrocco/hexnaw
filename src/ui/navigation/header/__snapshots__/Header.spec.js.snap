@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header Component when nothing specified should render correctly 1`] = `
-<Styled(Flex)
+<Headerstyles__StyledHeader
   alignItems="center"
   className=""
 >
@@ -11,7 +11,7 @@ exports[`Header Component when nothing specified should render correctly 1`] = `
     <HeaderLogo />
   </Box>
   <Box>
-    <styled.nav
+    <Headerstyles__StyledNav
       open={false}
     >
       <HeaderLink
@@ -29,12 +29,12 @@ exports[`Header Component when nothing specified should render correctly 1`] = `
       >
         The Scenery →
       </HeaderLink>
-    </styled.nav>
-    <styled.button
+    </Headerstyles__StyledNav>
+    <Headerstyles__StyledNavButton
       onClick={[Function]}
     >
       Click Me
-    </styled.button>
+    </Headerstyles__StyledNavButton>
   </Box>
-</Styled(Flex)>
+</Headerstyles__StyledHeader>
 `;
