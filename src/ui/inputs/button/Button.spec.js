@@ -6,6 +6,11 @@ import { modeStyles } from './Button.styles';
 
 describe('Button', () => {
   context('when nothing specified', () => {
+    it('renders correctly', () => {
+      const subject = mount(<Button>Click it</Button>);
+      expect(subject).toMatchSnapshot();
+    });
+
     it('renders styles for "primary" mode', () => {
       const subject = mount(<Button>Click it</Button>);
       expect(subject).toHaveStyleRule('background', modeStyles.primary.enabled.background);
@@ -16,7 +21,7 @@ describe('Button', () => {
     it('renders mode-specific styles', () => {
       Object.keys(modeStyles).map((mode) => {
         const subject = mount(<Button mode={mode} text={mode} />);
-        return expect(subject).toHaveStyleRule('background', modeStyles[mode].enabled.background);
+        expect(subject).toHaveStyleRule('background', modeStyles[mode].enabled.background);
       });
     });
   });
@@ -25,7 +30,7 @@ describe('Button', () => {
     it('renders mode-specific disabled styles', () => {
       Object.keys(modeStyles).map((mode) => {
         const subject = mount(<Button disabled mode={mode} text={mode} />);
-        return expect(subject).toHaveStyleRule('background', modeStyles[mode].disabled.background);
+        expect(subject).toHaveStyleRule('background', modeStyles[mode].disabled.background);
       });
     });
 

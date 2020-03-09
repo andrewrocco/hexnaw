@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button when nothing specified renders correctly 1`] = `
+.c0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #0201FE;
+  border-color: #0201FE;
+  border-style: solid;
+  border-width: 1px;
+  color: #FFFFFF;
+  cursor: pointer;
+  padding: 14px;
+}
+
+<Button
+  mode="primary"
+  type="button"
+>
+  <styled.button
+    hasText={false}
+    mode="primary"
+    type="button"
+  >
+    <button
+      className="c0"
+      mode="primary"
+      type="button"
+    >
+      Click it
+    </button>
+  </styled.button>
+</Button>
+`;

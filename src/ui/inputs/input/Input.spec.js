@@ -28,13 +28,13 @@ describe('Input', () => {
     });
   });
 
-  context('when hexValue is passed', () => {
-    it('renders the hex value in the after pseudo selector', () => {
-      expect(subject.find('div').first()).toHaveStyleRule('background', '#fff', {
-        modifier: ':after',
-      });
-    });
-  });
+  // context('when hexValue is passed', () => {
+  //   it('renders the hex value in the after pseudo selector', () => {
+  //     expect(subject.find('div').first()).toHaveStyleRule('background', '#fff', {
+  //       modifier: ':after',
+  //     });
+  //   });
+  // });
 
   context('when onRemove function is passed', () => {
     it('renders the close button', () => {

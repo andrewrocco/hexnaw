@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Heading Component when nothing specified should render correctly 1`] = `
-<Headingstyles__HeadingBase
+<styled.h2
   color="dark"
   size="medium"
 >
   Hello
-</Headingstyles__HeadingBase>
+</styled.h2>
 `;
