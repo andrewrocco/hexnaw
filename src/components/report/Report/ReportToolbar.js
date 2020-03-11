@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Box } from '@rebass/grid';
+import { Box, Flex } from '@rebass/grid';
 
 import { Heading, Text } from 'ui/typography';
 import { Toggle } from 'components/form';
-import { colors } from 'ui/base';
+import { colors, spacing } from 'ui/base';
 
 import * as Styled from './Report.styles';
 
@@ -70,18 +70,20 @@ export class ReportToolbar extends React.Component {
           <Styled.ToolbarAsideInner
             p={4}
           >
-            <div>
-              <Heading level={4} size="xsmall">Contrast Ratio</Heading>
-              <Text size={['xsmall']}>The contrast ratio is the difference in luminance between the two colors.</Text>
-            </div>
-            <div>
-              <h3>Large Text</h3>
-              <p>Large text is defined as 18px bold text or larger, or 24px regular text or larger..</p>
-            </div>
-            <div>
-              <h3>Small Text</h3>
-              <p>Small text is defined as 17px bold text or smaller, or 23px regular text or smaller.</p>
-            </div>
+            <Flex flexDirection={['column', 'row']}>
+              <Box width={[1, 1, 1 / 3]} pr={[0, 5]} mb={[5, 0]}>
+                <Heading level={3} size="xsmall" style={{ marginBottom: spacing.small }}>Contrast Ratio</Heading>
+                <Text size={['xsmall']}>The contrast ratio is the difference in luminance between the two colors.</Text>
+              </Box>
+              <Box width={[1, 1, 1 / 3]} pr={[0, 5]} mb={[5, 0]}>
+                <Heading level={3} size="xsmall" style={{ marginBottom: spacing.small }}>Large Text</Heading>
+                <Text size={['xsmall']}>Large text is defined as 18px bold text or larger, or 24px regular text or larger.</Text>
+              </Box>
+              <Box width={[1, 1, 1 / 3]}>
+                <Heading level={3} size="xsmall" style={{ marginBottom: spacing.small }}>Small Text</Heading>
+                <Text size={['xsmall']}>Small text is defined as 17px bold text or smaller, or 23px regular text or smaller.</Text>
+              </Box>
+            </Flex>
           </Styled.ToolbarAsideInner>
         </Styled.ToolbarAside>
       </Styled.ToolbarWrap>
