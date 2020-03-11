@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HeaderLink Component when nothing specified should render correctly 1`] = `
-<HeaderLinkstyles__StyledLink>
+<styled.a>
   Click Me
-</HeaderLinkstyles__StyledLink>
+</styled.a>
 `;
