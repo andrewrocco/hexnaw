@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Formik, Form, Field } from 'formik';
-import { Box, Flex } from '@rebass/grid';
+import { Box, Flex } from 'reflexbox/styled-components';
 
 import { testColors } from 'utils';
 import { Heading } from 'ui/typography';

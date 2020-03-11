@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Box, Flex } from '@rebass/grid';
+import { Box, Flex } from 'reflexbox/styled-components';
 import { breakpoints, colors, colorVariables, fonts, typography, widths } from 'ui/base';
 
 export const ToolbarWrap = styled(Box)`
