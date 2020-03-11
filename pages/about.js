@@ -44,7 +44,7 @@ const About = () => (
         </Box>
       </Box>
 
-      <Box py={6} style={{ backgroundColor: '#000' }}>
+      <Box className="section-dark" py={6} style={{ backgroundColor: '#000' }}>
         <Box m="0 auto" style={{ maxWidth: '800px' }}>
           <Box px={[4, 5, 0]} style={{ textAlign: 'center' }} mb={5}>
             <Heading size="medium" color="white">Release Notes</Heading>
