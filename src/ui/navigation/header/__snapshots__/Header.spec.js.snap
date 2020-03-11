@@ -3,11 +3,15 @@
 exports[`Header Component when nothing specified should render correctly 1`] = `
 .c1 {
   box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
   margin-right: auto;
 }
 
 .c4 {
   box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
 }
 
 .c6 {
@@ -50,14 +54,16 @@ exports[`Header Component when nothing specified should render correctly 1`] = `
 
 .c0 {
   box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  margin: 0;
+  min-width: 0;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
 }
 
@@ -126,14 +132,14 @@ exports[`Header Component when nothing specified should render correctly 1`] = `
 }
 
 <Header>
-  <Styled(Flex)
+  <Styled(Styled(styled.div))
     alignItems="center"
     className=""
   >
     <div
       className="sc-AxirZ c0"
     >
-      <Box
+      <styled.div
         mr="auto"
       >
         <div
@@ -179,8 +185,8 @@ exports[`Header Component when nothing specified should render correctly 1`] = `
             </Link>
           </HeaderLogo>
         </div>
-      </Box>
-      <Box>
+      </styled.div>
+      <styled.div>
         <div
           className="c4"
         >
@@ -264,8 +270,8 @@ exports[`Header Component when nothing specified should render correctly 1`] = `
             </button>
           </styled.button>
         </div>
-      </Box>
+      </styled.div>
     </div>
-  </Styled(Flex)>
+  </Styled(Styled(styled.div))>
 </Header>
 `;
