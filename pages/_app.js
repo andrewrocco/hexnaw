@@ -1,6 +1,5 @@
 import App from 'next/app';
 import React from 'react';
-import Head from 'next/head';
 import { createGlobalStyle } from 'styled-components';
 
 import { colorVariables } from 'ui/base';
@@ -26,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-class HexNaw extends App {
+class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
 
@@ -39,4 +38,4 @@ class HexNaw extends App {
   }
 }
 
-export default HexNaw;
+export default MyApp;
