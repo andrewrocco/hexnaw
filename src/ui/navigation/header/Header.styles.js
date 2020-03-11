@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Flex } from '@rebass/grid';
+import { Flex } from 'reflexbox/styled-components';
 
 import { breakpoints } from 'ui/base';
 

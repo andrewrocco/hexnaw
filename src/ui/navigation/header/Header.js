@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Box } from '@rebass/grid';
+import { Box } from 'reflexbox/styled-components';
 import classnames from 'classnames';
 
 import { HeaderLink, HeaderLogo } from 'ui/navigation';

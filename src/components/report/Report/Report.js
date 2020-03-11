@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Box } from '@rebass/grid';
+import { Box } from 'reflexbox/styled-components';
 
 import { ReportToolbar } from './ReportToolbar';
 import { ReportTable } from './ReportTable';

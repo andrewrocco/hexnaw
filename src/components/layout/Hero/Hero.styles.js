@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Box } from '@rebass/grid';
+import { Box } from 'reflexbox/styled-components';
 
 import { breakpoints, colors, spacing, typography, widths } from 'ui/base';
 

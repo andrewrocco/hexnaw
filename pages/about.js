@@ -2,7 +2,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { Box, Flex } from '@rebass/grid';
+import { Box, Flex } from 'reflexbox/styled-components';
 
 import { theme, spacing } from 'ui/base';
 import { AppHead, Footer } from 'components/layout';
