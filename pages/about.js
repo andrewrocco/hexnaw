@@ -4,7 +4,7 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { Box, Flex } from '@rebass/grid';
 
-import { theme } from 'ui/base';
+import { theme, spacing } from 'ui/base';
 import { AppHead, Footer } from 'components/layout';
 import { Header } from 'ui/navigation';
 import { Heading, Paragraph, Text } from 'ui/typography';
@@ -25,12 +25,12 @@ const About = () => (
         <Box py={6}>
           <Flex>
             <Box width={[1, 1, 1 / 2]} mr={[0, '10%']}>
-              <Heading>Get In Touch</Heading>
+              <Heading style={{ marginBottom: spacing.medium }}>Get In Touch</Heading>
               <Paragraph size={['small']}>Problems, feedback, requests? We&apos;d love to hear about your experience with Hex Naw and how we can make it even more useful.</Paragraph>
               <Paragraph size={['small']}><a href="mailto:hello@thescenery.co">Email the webmaster</a></Paragraph>
             </Box>
             <Box width={[1, 1, 1 / 2]}>
-              <Heading>Colophon</Heading>
+              <Heading style={{ marginBottom: spacing.medium }}>Colophon</Heading>
               <Paragraph size={['small']}>
                 The font? Gotham.
                 <br />
@@ -44,7 +44,7 @@ const About = () => (
         </Box>
       </Box>
 
-      <Box py={6} style={{ backgroundColor: '#000' }}>
+      <Box className="section-dark" py={6} style={{ backgroundColor: '#000' }}>
         <Box m="0 auto" style={{ maxWidth: '800px' }}>
           <Box px={[4, 5, 0]} style={{ textAlign: 'center' }} mb={5}>
             <Heading size="medium" color="white">Release Notes</Heading>
@@ -56,11 +56,12 @@ const About = () => (
               <Text color="gray70" size={['2xsmall']}>3/27/17</Text>
             </Box>
             <Box width={[1, 3 / 4]}>
-              <Paragraph color="white" size={['small']}>Pasting can be a harsh mistress.
+              <Paragraph color="white" size={['small']}>Pasting can be a harsh mistress.</Paragraph>
+              <Text color="white">
                 <ul>
                   <li>Paste a hex value into a field and now it just removes the hash instead of the last character. (Thanks, <a href="https://twitter.com/zaccolley" title="Zac Colley's Twitter account">Zac</a>)!</li>
                 </ul>
-              </Paragraph>
+              </Text>
             </Box>
           </Flex>
 
@@ -71,11 +72,12 @@ const About = () => (
               <Text color="gray70" size={['2xsmall']}>10/24/16</Text>
             </Box>
             <Box width={[1, 3 / 4]}>
-              <Paragraph color="white" size={['small']}>Sure, you can clear all the fields at once, but that felt a bit overkill. Now you can clear individual fields for fun and profit!
+              <Paragraph color="white" size={['small']}>Sure, you can clear all the fields at once, but that felt a bit overkill. Now you can clear individual fields for fun and profit!</Paragraph>
+              <Text color="white">
                 <ul>
                   <li>You can now delete individual fields if there are more than two.</li>
                 </ul>
-              </Paragraph>
+              </Text>
             </Box>
           </Flex>
 
@@ -86,12 +88,13 @@ const About = () => (
               <Text color="gray70" size={['2xsmall']}>10/18/16</Text>
             </Box>
             <Box width={[1, 3 / 4]}>
-              <Paragraph color="white" size={['small']}>What&apos;s an initial release without an immediate bug fix?
+              <Paragraph color="white" size={['small']}>What&apos;s an initial release without an immediate bug fix?</Paragraph>
+              <Text color="white">
                 <ul>
                   <li>Pasting a hex value containing a hash no longer cuts off the last character. (Thanks, <a href="https://twitter.com/weisjohn" title="John Weis's Twitter account">John Weis</a>)!</li>
                   <li>OG image points to the correct domain</li>
                 </ul>
-              </Paragraph>
+              </Text>
             </Box>
           </Flex>
 

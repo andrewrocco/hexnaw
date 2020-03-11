@@ -3,6 +3,8 @@ import React from 'react';
 import Head from 'next/head';
 import { createGlobalStyle } from 'styled-components';
 
+import { colorVariables } from 'ui/base';
+
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
@@ -11,6 +13,16 @@ const GlobalStyle = createGlobalStyle`
 
   * {
     box-sizing: border-box;
+  }
+
+  a {
+    color: ${colorVariables.typeAccent};
+  }
+
+  .section-dark {
+    a {
+      color: ${colorVariables.typeWhite};
+    }
   }
 `;
 

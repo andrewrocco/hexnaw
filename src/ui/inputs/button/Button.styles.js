@@ -88,7 +88,7 @@ export const Button = styled.button`
   border-width: 1px;
   color: ${style('color')};
   cursor: pointer;
-  padding: ${style('padding')}
+  padding: ${style('padding')};
 
   ${style('unique')}
 `;
