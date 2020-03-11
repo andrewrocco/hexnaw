@@ -3,7 +3,7 @@ import React from 'react';
 import Head from 'next/head';
 import { createGlobalStyle } from 'styled-components';
 
-import { typographicColors } from 'ui/base/color/colorVariables';
+import { colorVariables } from 'ui/base';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -16,12 +16,12 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: ${typographicColors.typeAccent};
+    color: ${colorVariables.typeAccent};
   }
 
   .section-dark {
     a {
-      color: ${typographicColors.typeWhite};
+      color: ${colorVariables.typeWhite};
     }
   }
 `;

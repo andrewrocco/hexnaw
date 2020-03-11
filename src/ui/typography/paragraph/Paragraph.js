@@ -21,6 +21,7 @@ const getSizes = ({ size = [] }) => css`
 export const Paragraph = styled.p`
   ${getSizes}
   color: ${p => colors[p.color] || colors.black};
+  margin-top: 0;
 
   &:last-of-type {
     margin-bottom: 0;
