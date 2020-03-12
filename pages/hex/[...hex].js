@@ -21,14 +21,13 @@ class Hex extends Component {
         (/^[a-fA-F0-9]{6}$|^[a-fA-F0-9]{3}$/).test(value)
       ));
 
-      // make sure that it's capped at 12
-
       const results = testColors({ ...validHexValues });
 
       return results;
     };
 
-    const limitedHex = hex.splice(0, maxInputs - 1);
+    // make sure that it's capped at 12 items
+    const limitedHex = hex.splice(0, maxInputs);
     const cleanResults = validateAndTest(limitedHex);
 
     return { cleanResults };
@@ -52,7 +51,7 @@ class Hex extends Component {
 }
 
 Hex.propTypes = {
-  cleanResults: PropTypes.object.isRequired,
+  cleanResults: PropTypes.array.isRequired,
 };
 
 export default Hex;
