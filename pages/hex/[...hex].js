@@ -8,10 +8,10 @@ import { Header } from 'ui/navigation';
 import { theme } from 'ui/base';
 import { testColors } from 'utils';
 
-
 class Hex extends Component {
   static async getInitialProps({ query }) {
     const { hex } = query;
+    const maxInputs = 12;
 
     const validateAndTest = (values) => {
       if (!values) return [];
@@ -21,12 +21,15 @@ class Hex extends Component {
         (/^[a-fA-F0-9]{6}$|^[a-fA-F0-9]{3}$/).test(value)
       ));
 
+      // make sure that it's capped at 12
+
       const results = testColors({ ...validHexValues });
 
       return results;
     };
 
-    const cleanResults = validateAndTest(hex);
+    const limitedHex = hex.splice(0, maxInputs - 1);
+    const cleanResults = validateAndTest(limitedHex);
 
     return { cleanResults };
   }
