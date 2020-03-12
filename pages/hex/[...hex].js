@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { useRouter } from 'next/router';
 
 import { Report } from 'components/report';
 import { AppHead, Footer, Hero } from 'components/layout';
@@ -8,34 +7,44 @@ import { Header } from 'ui/navigation';
 import { theme } from 'ui/base';
 import { testColors } from 'utils';
 
-const Hex = () => {
-  const router = useRouter();
-  const { hex } = router.query;
 
-  const validateAndTest = (values) => {
-    if (!values) return [];
+class Hex extends Component {
+  static async getInitialProps({ query }) {
+    const { hex } = query;
 
-    // validate incoming values
-    const validHexValues = values.filter(value => (
-      (/^[a-fA-F0-9]{6}$|^[a-fA-F0-9]{3}$/).test(value)
-    ));
+    const validateAndTest = (values) => {
+      if (!values) return [];
 
-    const results = testColors({ ...validHexValues });
+      // validate incoming values
+      const validHexValues = values.filter(value => (
+        (/^[a-fA-F0-9]{6}$|^[a-fA-F0-9]{3}$/).test(value)
+      ));
 
-    return results;
-  };
+      const results = testColors({ ...validHexValues });
 
-  return (
-    <>
-      <ThemeProvider theme={theme}>
-        <AppHead />
-        <Header />
-        <Hero />
-        <Report colorResults={validateAndTest(hex)} />
-        <Footer />
-      </ThemeProvider>
-    </>
-  );
-};
+      return results;
+    };
+
+    const cleanResults = validateAndTest(hex);
+
+    return { cleanResults };
+  }
+
+  render() {
+    const { cleanResults } = this.props;
+
+    return (
+      <>
+        <ThemeProvider theme={theme}>
+          <AppHead />
+          <Header />
+          <Hero />
+          <Report colorResults={cleanResults} />
+          <Footer />
+        </ThemeProvider>
+      </>
+    );
+  }
+}
 
 export default Hex;
