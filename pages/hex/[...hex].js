@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 
 import { Report } from 'components/report';
@@ -46,5 +47,9 @@ class Hex extends Component {
     );
   }
 }
+
+Hex.propTypes = {
+  cleanResults: PropTypes.object.isRequired,
+};
 
 export default Hex;
