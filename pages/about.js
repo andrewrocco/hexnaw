@@ -49,6 +49,24 @@ const About = () => (
           <Box px={[4, 5, 0]} style={{ textAlign: 'center' }} mb={5}>
             <Heading size="medium" color="white">Release Notes</Heading>
           </Box>
+
+          <Flex mb={5}>
+            <Box width={[1, 1 / 4]}>
+              <Text color="white">2.0.0</Text>
+              <br />
+              <Text color="gray70" size={['2xsmall']}>3/12/20</Text>
+            </Box>
+            <Box width={[1, 3 / 4]}>
+              <Paragraph color="white" size={['small']}>It&apos;s been a while...</Paragraph>
+              <Text color="white">
+                <ul>
+                  <li>Completely rebuilt using Next.js</li>
+                  <li>Testing via URL is now available! <a href="/hex/666/66DD33/333/222/ff3300" title="Sample test via URL">Give it a try!</a></li>
+                </ul>
+              </Text>
+            </Box>
+          </Flex>
+
           <Flex mb={5}>
             <Box width={[1, 1 / 4]}>
               <Text color="white">1.0.3</Text>
