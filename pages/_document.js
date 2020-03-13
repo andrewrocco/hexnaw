@@ -34,6 +34,17 @@ export default class MyDocument extends Document {
           <link rel="shortcut icon" type="image/ico" href="/static/favicon.ico" />
           <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6366132/7734772/css/fonts.css" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+          {/* SEO Meta */}
+          <meta name="description" content="Test your core color palette or sass variables against accessibility and color contrast standards. Powered by colorable.js" />
+          <meta name="robots" content="index,follow" />
+
+          {/* Facebook */}
+          <meta property="og:title" content="Hex Naw | A color accessibility tool built by The Scenery." />
+          <meta property="og:site_name" content="Hex Naw" />
+          <meta property="og:url" content="https://hexnaw.com/" />
+          <meta property="og:description" content="Accessibility testing for color palettes or sass variables, built by The Scenery." />
+          <meta property="og:image" content="https://hexnaw.com/images/hexnaw.jpg" />
         </Head>
         <body>
           <Main />
