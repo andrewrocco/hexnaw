@@ -65,6 +65,7 @@ export const StyledNavButton = styled.button`
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' id='close-nav' viewBox='0 0 612 612'%3E%3Cpath fill='%23FFFFFF' d='M612 36.004L576.52.604 306 270.607 35.478.603 0 36.003l270.522 270.008L0 575.998l35.478 35.4L306 341.41l270.52 269.987 35.48-35.4L341.46 306.01'/%3E%3C/svg%3E");
   }
 
+  /* Hide the button contents visually, but allow screen readers to pick it up */
   span {
     clip: rect(0 0 0 0);
     height: 1px; width: 1px;
