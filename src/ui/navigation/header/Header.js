@@ -19,6 +19,9 @@ export class Header extends PureComponent {
   handleMenuToggle() {
     const { menuOpen } = this.state;
     this.setState({ menuOpen: !menuOpen });
+
+    // toggle the body class too
+    document.body.classList.toggle('menu-active');
   }
 
   render() {
@@ -36,7 +39,9 @@ export class Header extends PureComponent {
             <HeaderLink href="/about">About</HeaderLink>
             <HeaderLink href="https://thescenery.co">The Scenery &rarr;</HeaderLink>
           </StyledNav>
-          <StyledNavButton onClick={this.handleMenuToggle}>Click Me</StyledNavButton>
+          <StyledNavButton onClick={this.handleMenuToggle}>
+            <span>{!menuOpen ? 'Open Menu' : 'Close Menu'}</span>
+          </StyledNavButton>
         </Box>
       </StyledHeader>
     );
