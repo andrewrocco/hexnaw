@@ -1,2 +1,2 @@
-export * from './ga';
+export * from './analytics';
 export * from './testColors';
