@@ -45,12 +45,12 @@ const About = () => (
       </Box>
 
       <Box className="section-dark" py={6} style={{ backgroundColor: '#000' }}>
-        <Box m="0 auto" style={{ maxWidth: '800px' }}>
+        <Box px={[4, 0]} m="0 auto" style={{ maxWidth: '800px' }}>
           <Box px={[4, 5, 0]} style={{ textAlign: 'center' }} mb={5}>
             <Heading size="medium" color="white">Release Notes</Heading>
           </Box>
 
-          <Flex mb={5}>
+          <Flex mb={5} flexDirection={['column', 'row']}>
             <Box width={[1, 1 / 4]}>
               <Text color="white">2.0.0</Text>
               <br />
@@ -67,7 +67,7 @@ const About = () => (
             </Box>
           </Flex>
 
-          <Flex mb={5}>
+          <Flex mb={5} flexDirection={['column', 'row']}>
             <Box width={[1, 1 / 4]}>
               <Text color="white">1.0.3</Text>
               <br />
@@ -83,7 +83,7 @@ const About = () => (
             </Box>
           </Flex>
 
-          <Flex mb={5}>
+          <Flex mb={5} flexDirection={['column', 'row']}>
             <Box width={[1, 1 / 4]}>
               <Text color="white">1.0.2</Text>
               <br />
@@ -99,7 +99,7 @@ const About = () => (
             </Box>
           </Flex>
 
-          <Flex mb={5}>
+          <Flex mb={5} flexDirection={['column', 'row']}>
             <Box width={[1, 1 / 4]}>
               <Text color="white">1.0.1</Text>
               <br />
@@ -116,7 +116,7 @@ const About = () => (
             </Box>
           </Flex>
 
-          <Flex mb={5}>
+          <Flex mb={5} flexDirection={['column', 'row']}>
             <Box width={[1, 1 / 4]}>
               <Text color="white">1.0.0</Text>
               <br />
