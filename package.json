@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "NODE_PATH=src next",
+    "dev": "NODE_PATH=src NODE_ENV=development next",
     "build": "NODE_PATH=src next build",
     "start": "NODE_PATH=src next start",
     "test": "NODE_ENV=test NODE_PATH=src jest",
@@ -33,7 +33,6 @@
     "next": "^9.3.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "react-ga": "^2.7.0",
     "reflexbox": "^4.0.6",
     "styled-components": "^5.0.1"
   },

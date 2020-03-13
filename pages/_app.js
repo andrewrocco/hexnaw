@@ -3,7 +3,6 @@ import React from 'react';
 import { createGlobalStyle } from 'styled-components';
 
 import { colorVariables } from 'ui/base';
-import Layout from 'components/layout/main';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -33,9 +32,7 @@ class MyApp extends App {
     return (
       <>
         <GlobalStyle />
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <Component {...pageProps} />
       </>
     );
   }
