@@ -22,5 +22,5 @@ export default class Layout extends Component {
 }
 
 Layout.propTypes = {
-  children: PropTypes.array,
+  children: PropTypes.object,
 };
