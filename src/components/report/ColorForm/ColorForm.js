@@ -80,6 +80,7 @@ export class ColorForm extends Component {
 
   handlePaste(event, index) {
     event.persist();
+    event.preventDefault();
 
     let pasteData;
     if (window.clipboardData && window.clipboardData.getData) {
@@ -90,12 +91,10 @@ export class ColorForm extends Component {
 
     const cleanValue = pasteData.replace('#', '');
 
+    // #444
+
     // set the new value
-    // hexInputNames[index].value = cleanValue;
-    // get the field value
-    pasteData = '';
     const id = `hex${index}`;
-    this.setFieldValueProxy(id, '');
     this.setFieldValueProxy(id, cleanValue);
   }
 
