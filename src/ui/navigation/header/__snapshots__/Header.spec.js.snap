@@ -93,15 +93,15 @@ exports[`Header Component when nothing specified should render correctly 1`] = `
 }
 
 .c7 span {
+  border: 0;
   -webkit-clip: rect(0 0 0 0);
   clip: rect(0 0 0 0);
   height: 1px;
-  width: 1px;
   margin: -1px;
-  padding: 0;
-  border: 0;
   overflow: hidden;
+  padding: 0;
   position: absolute;
+  width: 1px;
 }
 
 @media only screen and (max-width:700px) {
