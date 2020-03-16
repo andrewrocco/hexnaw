@@ -48,6 +48,7 @@ export class ColorForm extends Component {
     this.handleFieldRemove = this.handleFieldRemove.bind(this);
     this.handleValidation = this.handleValidation.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handlePaste = this.handlePaste.bind(this);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -75,6 +76,27 @@ export class ColorForm extends Component {
   resetForm() {
     this.setState({ ...this.initialState });
     this.handleResetProxy();
+  }
+
+  handlePaste(event, index) {
+    event.persist();
+
+    let pasteData;
+    if (window.clipboardData && window.clipboardData.getData) {
+      pasteData = window.clipboardData.getData('Text');
+    } else if (event.clipboardData && event.clipboardData.getData) {
+      pasteData = event.clipboardData.getData('text/plain');
+    }
+
+    const cleanValue = pasteData.replace('#', '');
+
+    // set the new value
+    // hexInputNames[index].value = cleanValue;
+    // get the field value
+    pasteData = '';
+    const id = `hex${index}`;
+    this.setFieldValueProxy(id, '');
+    this.setFieldValueProxy(id, cleanValue);
   }
 
   handleFieldRemove(index) {
@@ -183,6 +205,7 @@ export class ColorForm extends Component {
                             id={hexName}
                             maxLength="6"
                             name={hexName}
+                            onPaste={e => this.handlePaste(e, i)}
                             onRemove={this.handleFieldRemove(i)}
                             placeholder={i === 0 ? 'FFFFFF' : '000000'}
                           />
