@@ -89,9 +89,8 @@ export class ColorForm extends Component {
       pasteData = event.clipboardData.getData('text/plain');
     }
 
+    // remove the hash
     const cleanValue = pasteData.replace('#', '');
-
-    // #444
 
     // set the new value
     const id = `hex${index}`;
