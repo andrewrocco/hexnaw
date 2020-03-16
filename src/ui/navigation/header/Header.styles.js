@@ -67,11 +67,14 @@ export const StyledNavButton = styled.button`
 
   /* Hide the button contents visually, but allow screen readers to pick it up */
   span {
+    border: 0;
     clip: rect(0 0 0 0);
-    height: 1px; width: 1px;
-    margin: -1px; padding: 0; border: 0;
+    height: 1px;
+    margin: -1px;
     overflow: hidden;
+    padding: 0;
     position: absolute;
+    width: 1px;
   }
 
   ${breakpoints.medium.min} {
