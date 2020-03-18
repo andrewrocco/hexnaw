@@ -36,6 +36,7 @@ export class ColorForm extends Component {
       hexInputNames: getInitialInputNames(this.initialValues),
       isAddButtonDisabled: true,
       isSubmitButtonDisabled: true,
+      hexInputValues: [],
     };
 
     this.state = this.initialState;
@@ -133,6 +134,12 @@ export class ColorForm extends Component {
     const { onSubmit } = this.props;
 
     actions.setSubmitting(false);
+
+    // get valid user-added hex values
+    const hexValues = Object.values(values).filter(value => value !== '');
+
+    this.setState({ hexInputValues: hexValues });
+
     onSubmit(testColors(values));
   }
 
@@ -142,9 +149,11 @@ export class ColorForm extends Component {
       hexInputNames,
       isAddButtonDisabled,
       isSubmitButtonDisabled,
+      hexInputValues,
     } = this.state;
 
     const { maxInputs } = this.props;
+    const splitHexValues = hexInputValues.join('/');
 
     return (
       <Styled.FormContainer m={4}>
@@ -233,6 +242,26 @@ export class ColorForm extends Component {
               );
             }}
           />
+          {splitHexValues.length > 0
+            && (
+              <Flex pt={6}>
+                <form style={{ width: '100%' }}>
+                  <Styled.URLInputLabel>
+                    <Box mb={[2, 0]} width={[1, 1 / 5]} alignSelf="center">
+                      <span>Share this test:</span>
+                    </Box>
+                    <Box width={[1, 4 / 5]}>
+                      <Styled.URLInput
+                        readOnly
+                        value={`https://hexnaw.com/hex/${splitHexValues}`}
+                        type="text"
+                      />
+                    </Box>
+                  </Styled.URLInputLabel>
+                </form>
+              </Flex>
+            )
+          }
         </Styled.FormInnerWrap>
       </Styled.FormContainer>
     );

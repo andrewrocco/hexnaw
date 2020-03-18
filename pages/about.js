@@ -52,6 +52,22 @@ const About = () => (
 
           <Flex mb={5} flexDirection={['column', 'row']}>
             <Box width={[1, 1 / 4]}>
+              <Text color="white">2.0.1</Text>
+              <br />
+              <Text color="gray70" size={['2xsmall']}>3/18/20</Text>
+            </Box>
+            <Box width={[1, 3 / 4]}>
+              <Paragraph color="white" size={['small']}>First feature add!</Paragraph>
+              <Text color="white">
+                <ul>
+                  <li>A helpful URL share field appears after a test is complete so you can share it!</li>
+                </ul>
+              </Text>
+            </Box>
+          </Flex>
+
+          <Flex mb={5} flexDirection={['column', 'row']}>
+            <Box width={[1, 1 / 4]}>
               <Text color="white">2.0.0</Text>
               <br />
               <Text color="gray70" size={['2xsmall']}>3/12/20</Text>
