@@ -85,9 +85,10 @@ export class ReportToolbar extends React.Component {
           </Styled.ToolbarAsideInner>
           <Styled.ToolbarAsideInner p={4}>
             <Flex flexDirection="row">
-              <Box width={[1, 3 / 4]} mb={[5, 0]}>
+              <Box width={[1, 2 / 3]} mb={[5, 0]}>
                 <Heading level={3} size="xsmall" style={{ marginBottom: spacing.small }}>Reading Test Results</Heading>
-                <Paragraph size={['xsmall']}>This table shows the best possible score of every combination related to <a href="https://www.w3.org/TR/WCAG20/#visual-audio-contrast">WCAG 2.1 guidelines</a>. If &quot;AAA&quot; is shown as a result, this means that the color combination also passes &quot;AA&quot;.</Paragraph>
+                <Paragraph size={['xsmall']}>The table below shows the best possible score of every combination related to <a href="https://www.w3.org/TR/WCAG20/#visual-audio-contrast">WCAG 2.1 guidelines</a>. If &quot;AAA&quot; is shown as a result, this means that the color combination also passes &quot;AA&quot;.</Paragraph>
+                <Paragraph size={['xsmall']}>Conversely, if only &quot;AA&quot; is shown as passing, the color combination <i>does not</i> pass &quot;AAA&quot;.</Paragraph>
                 <Paragraph size={['xsmall']}>&quot;Naw&quot; means that the combination does not meet the minimum contrast requirements for &quot;AA&quot; and therefore fails.</Paragraph>
               </Box>
             </Flex>
