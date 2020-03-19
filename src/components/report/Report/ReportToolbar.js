@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Box, Flex } from 'reflexbox/styled-components';
 
-import { Heading, Text } from 'ui/typography';
+import { Heading, Text, Paragraph } from 'ui/typography';
 import { Toggle } from 'components/form';
 import { colors, spacing } from 'ui/base';
 
@@ -67,21 +67,29 @@ export class ReportToolbar extends React.Component {
           </Styled.ToolbarSection>
         </Styled.ToolbarInner>
         <Styled.ToolbarAside isOpen={isHelpVisible}>
-          <Styled.ToolbarAsideInner
-            p={4}
-          >
+          <Styled.ToolbarAsideInner p={4}>
             <Flex flexDirection={['column', 'row']}>
               <Box width={[1, 1, 1 / 3]} pr={[0, 5]} mb={[5, 0]}>
                 <Heading level={3} size="xsmall" style={{ marginBottom: spacing.small }}>Contrast Ratio</Heading>
-                <Text size={['xsmall']}>The contrast ratio is the difference in luminance between the two colors.</Text>
+                <Paragraph size={['xsmall']}>The contrast ratio is the difference in luminance between the two colors.</Paragraph>
               </Box>
               <Box width={[1, 1, 1 / 3]} pr={[0, 5]} mb={[5, 0]}>
                 <Heading level={3} size="xsmall" style={{ marginBottom: spacing.small }}>Large Text</Heading>
-                <Text size={['xsmall']}>Large text is defined as 18px bold text or larger, or 24px regular text or larger.</Text>
+                <Paragraph size={['xsmall']}>Large text is defined as ~18.5px bold text or larger, or 24px regular text or larger.</Paragraph>
               </Box>
-              <Box width={[1, 1, 1 / 3]}>
+              <Box width={[1, 1, 1 / 3]} mb={[5, 0]}>
                 <Heading level={3} size="xsmall" style={{ marginBottom: spacing.small }}>Small Text</Heading>
-                <Text size={['xsmall']}>Small text is defined as 17px bold text or smaller, or 23px regular text or smaller.</Text>
+                <Paragraph size={['xsmall']}>Small text is defined as ~18.4px bold text or smaller, or 23px regular text or smaller.</Paragraph>
+              </Box>
+            </Flex>
+          </Styled.ToolbarAsideInner>
+          <Styled.ToolbarAsideInner p={4}>
+            <Flex flexDirection="row">
+              <Box width={[1, 2 / 3]} mb={[5, 0]}>
+                <Heading level={3} size="xsmall" style={{ marginBottom: spacing.small }}>Reading Test Results</Heading>
+                <Paragraph size={['xsmall']}>The table below shows the best possible score of every combination related to <a href="https://www.w3.org/TR/WCAG20/#visual-audio-contrast">WCAG 2.1 guidelines</a>. If &quot;AAA&quot; is shown as a result, this means that the color combination also passes &quot;AA&quot;.</Paragraph>
+                <Paragraph size={['xsmall']}>Conversely, if only &quot;AA&quot; is shown as passing, the color combination <i>does not</i> pass &quot;AAA&quot;.</Paragraph>
+                <Paragraph size={['xsmall']}>&quot;Naw&quot; means that the combination does not meet the minimum contrast requirements for &quot;AA&quot; and therefore fails.</Paragraph>
               </Box>
             </Flex>
           </Styled.ToolbarAsideInner>
