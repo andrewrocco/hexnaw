@@ -75,11 +75,11 @@ export class ReportToolbar extends React.Component {
               </Box>
               <Box width={[1, 1, 1 / 3]} pr={[0, 5]} mb={[5, 0]}>
                 <Heading level={3} size="xsmall" style={{ marginBottom: spacing.small }}>Large Text</Heading>
-                <Paragraph size={['xsmall']}>Large text is defined as 18.5px bold text or larger, or 24px regular text or larger.</Paragraph>
+                <Paragraph size={['xsmall']}>Large text is defined as ~18.5px bold text or larger, or 24px regular text or larger.</Paragraph>
               </Box>
               <Box width={[1, 1, 1 / 3]} mb={[5, 0]}>
                 <Heading level={3} size="xsmall" style={{ marginBottom: spacing.small }}>Small Text</Heading>
-                <Paragraph size={['xsmall']}>Small text is defined as 18.4px bold text or smaller, or 23px regular text or smaller.</Paragraph>
+                <Paragraph size={['xsmall']}>Small text is defined as ~18.4px bold text or smaller, or 23px regular text or smaller.</Paragraph>
               </Box>
             </Flex>
           </Styled.ToolbarAsideInner>
