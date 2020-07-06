@@ -19,7 +19,7 @@ const About = () => (
           <Box mb={6}>
             <Heading color="accent" size="large">Hex Naw is a color contrast tool built for designers and developers. It&apos;s the one we wanted but couldn&apos;t quite find.</Heading>
           </Box>
-          <Paragraph>At The Scenery we tend to deal with colors on a systematic level. Whether it&apos;s defining a brand&apos;s core color palette, or evaluating a product&apos;s Sass variables, we&apos;re usually working with accessibility and color contrast on a large scale. After spending hours using the myriad of available tools to input comparisons one by one, we decided to make a tool that could handle small systems as elegantly as single combinations. Hex Naw is the beginning of that tool.</Paragraph>
+          <Paragraph>We tend to deal with colors on a systematic level. Whether it&apos;s defining a brand&apos;s core color palette, or evaluating a product&apos;s Sass variables, we&apos;re usually working with accessibility and color contrast on a large scale. After spending hours using the myriad of available tools to input comparisons one by one, we decided to make a tool that could handle small systems as elegantly as single combinations. Hex Naw is the beginning of that tool.</Paragraph>
           <Paragraph>Using the massive power of Colorable to crunch all the numbers, designers and developers can now see how accessible their entire color systems are, and make critical decisions from this data. Decisions that will help make the web and the products we use a better place for everyone involved.</Paragraph>
         </Box>
         <Box py={6}>
@@ -27,7 +27,7 @@ const About = () => (
             <Box width={[1, 1, 1 / 2]} mr={[0, '10%']}>
               <Heading style={{ marginBottom: spacing.medium }}>Get In Touch</Heading>
               <Paragraph size={['small']}>Problems, feedback, requests? We&apos;d love to hear about your experience with Hex Naw and how we can make it even more useful.</Paragraph>
-              <Paragraph size={['small']}><a href="mailto:hello@thescenery.co">Email the webmaster</a></Paragraph>
+              <Paragraph size={['small']}><a href="https://twitter.com/andrewrocco">Send us a tweet</a></Paragraph>
             </Box>
             <Box width={[1, 1, 1 / 2]} mb={[6, 0]}>
               <Heading style={{ marginBottom: spacing.medium }}>Colophon</Heading>

@@ -14,8 +14,5 @@ export const FooterNav = () => (
         <a className="footer-nav-list-link">About</a>
       </Link>
     </li>
-    <li className="footer-nav-list-item">
-      <a className="footer-nav-list-link" href="http://thescenery.co">The Scenery →</a>
-    </li>
   </ul>
 );
