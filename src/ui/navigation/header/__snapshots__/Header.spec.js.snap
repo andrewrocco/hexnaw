@@ -268,20 +268,6 @@ exports[`Header Component when nothing specified should render correctly 1`] = `
                   </styled.a>
                 </Link>
               </HeaderLink>
-              <HeaderLink
-                href="https://thescenery.co"
-              >
-                <styled.a
-                  href="https://thescenery.co"
-                >
-                  <a
-                    className="c6"
-                    href="https://thescenery.co"
-                  >
-                    The Scenery →
-                  </a>
-                </styled.a>
-              </HeaderLink>
             </nav>
           </styled.nav>
           <styled.button
